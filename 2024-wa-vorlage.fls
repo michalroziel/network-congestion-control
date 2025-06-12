@@ -121,6 +121,7 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/m
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecss1200.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsx1200.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsx1728.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1200.tfm
 INPUT ./2024-wa-vorlage.toc
 INPUT ./2024-wa-vorlage.toc
 INPUT 2024-wa-vorlage.toc
@@ -147,7 +148,6 @@ INPUT ./graphics/insects-5304085_640.png
 INPUT ./2024-wa-vorlage.bbl
 INPUT ./2024-wa-vorlage.bbl
 INPUT 2024-wa-vorlage.bbl
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1200.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsx2488.tfm
 INPUT 2024-wa-vorlage.aux
 INPUT ./titleseite.aux
@@ -155,12 +155,12 @@ INPUT ./titleseite.aux
 INPUT titleseite.aux
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx2488.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx2488.pk
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1440.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1440.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1728.pk
