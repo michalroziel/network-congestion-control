@@ -20,28 +20,23 @@
 % Hier ist der Abstract
 \section*{Abstract}
 
-Netzwerkstaukontrolle (Englisch : \textit{ Network congestion control, NCF }) ist ein essentieller Bestandteil der 
-meisten modernen Computernetzwerke.
-Wenn eine Netzwerkschnittstelle zu einem Zeitpunkt versucht eine zu große Menge an Datenpaketen aufzunehmen, 
-kommt es zu Stau von Datenverkehr und zu dem Verlust von Datenpaketen.
 
 \;
-\;
-\;
+Im Rahmen dieses Berichts werden verschiedene Algorithmen Netzwerkstaukontrolle
+In dem heutigen Stand von Computernetzwerken werden verschiedene Protokolle zur Netzwerkstaukontrolle genutzt, 
+Ich werde mich im Rahmen dieses Berichts allerdings auf das Transmission Control Protocoll 
+(Deutsch : \textit{Übertragungssteuerungsprotokoll, TCP}) beschränken, da dies das am meisten verbreitete ist.  
+Die Algorithmen der Staukontrolle, welche in diesen Bericht einfließen sind : TCP Reno, TCP CUBIC, TCP ECN, und BBR.
+\newline
+Mittels des Netzwerk Emulators \textit{MiniNet} wird ein virtuelles Netzwerk zwischen zwei Endpunkten aufgestellt, über
+welches ein Künstlicher Datenverkehr erzeugt wird.
+Der genannte Datenverkehr wird anschließend aufgezeichnet und dient somit als Basis für den Vergleich der Staukontrolle durch 
+die verschiedenen Algorithmen.
+Die Auswertung, welche aus den Aufzeichungen stammt, ermöglicht dem Leser ein tieferes Verständnis über Staukontrolle in Computernetzwerken
+zu erhalten. 
 
-Kurze Zusammenfassung des Inhaltes in deutscher Sprache, der Umfang beträgt 
-zwischen einer halben und einer ganzen DIN A4-Seite.
 
-Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz 
-jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen 
-Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.
 
-Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen Mäxchens 
-Vögel Rüben, Joghurt und Quark. "Fix, Schwyz! " quäkt Jürgen blöd vom Paß. 
-Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich. Falsches Üben 
-von Xylophonmusik quält jeden größeren Zwerg. Heizölrückstoßabdämpfung. Zwei 
-flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im 
-komplett verwahrlosten Taxi quer durch Bayern.
 
 
 \newpage
@@ -77,12 +72,18 @@ Unterschrift  Michal Roziel
 \pagenumbering{arabic}
 
 % Hier beginnt das erste Kapitel
+
+
 \section{Einleitung}
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo 
-ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis 
-parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, 
-pellentesque eu, pretium quis \cite{ahu61}, sem. Nulla consequat massa quis 
-enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+
+Netzwerkstaukontrolle (Englisch : \textit{ Network congestion control, CC }) ist ein essentieller Bestandteil der 
+meisten modernen Computernetzwerke. CC lässt sich in zu der Schicht 3 (Transportschicht) in dem OSI-Modell einordnen. 
+Wenn eine Netzwerkschnittstelle zu einem Zeitpunkt versucht eine zu große Menge an Datenpaketen aufzunehmen,
+kommt es zu Stau von Datenverkehr und zu einem potentiellen Verlust von Datenpaketen.
+Aufgrund diesem Vorkommen werden Algorithmen innerhalb von Netzwerkprotokollen verwendet, diese erkennen den Anstau von Datenverkehr im Netzwerk,
+und helfen den Fluss von Datenpaketen zu steuern. Neben dem effizienten Durchfluss von Informationen ist zeitgleich auch die ...
+
+
 
 \subsection{Grundlagen und Begriffe}
 In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum 

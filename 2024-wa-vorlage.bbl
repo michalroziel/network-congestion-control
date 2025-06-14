@@ -1,4 +1,4 @@
-\begin{thebibliography}{AHU61}
+\begin{thebibliography}{Mas85}
 
 \bibitem[AB94]{ab94}
 Charalambos~D. Aliprantis and Kim~C. Border.
@@ -11,11 +11,6 @@ Gagan Aggarwal and Jason~D. Hartline.
 \newblock In {\em Proceedings of the 17th Annual ACM-SIAM Symposium on Discrete
   Algorithms}, pages 1083--1092, New York, 2006. Association for Computing
   Machinery.
-
-\bibitem[AHU61]{ahu61}
-Kenneth~J. Arrow, Leonid Hurwicz, and Hirofumi Uzawa.
-\newblock Constraint qualifications in maximization problems.
-\newblock {\em Naval Research Logistics Quarterly}, 8:175--191, 1961.
 
 \bibitem[Arr48]{arrow48}
 Kenneth~J. Arrow.

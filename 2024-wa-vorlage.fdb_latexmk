@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex 2024-wa-vorlage"] 1749722983.68786 "2024-wa-vorlage.aux" "2024-wa-vorlage.bbl" "2024-wa-vorlage" 1749729025.11045 0
+["bibtex 2024-wa-vorlage"] 1749923119.8854 "2024-wa-vorlage.aux" "2024-wa-vorlage.bbl" "2024-wa-vorlage" 1749923122.30885 0
   "./literatur.bib" 1592820876 1661 8c1dff1f8fb140d58f5accfe79b1f9ee ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/bibtex/bst/bibtex/alpha.bst" 1701187848.4407 23907 a5f93555796fb564b924339521f10a7c ""
-  "2024-wa-vorlage.aux" 1749729024.12527 2400 742ee369ea3386e0ba7a87f3c7711927 "pdflatex"
-  "titleseite.aux" 1749729024.05365 456 271f59991d621dd0186fbe68082df7c6 "pdflatex"
+  "2024-wa-vorlage.aux" 1749923121.37248 2360 6370f3f84d6e568d13e6b519db73935c "pdflatex"
+  "titleseite.aux" 1749923121.30734 456 271f59991d621dd0186fbe68082df7c6 "pdflatex"
   (generated)
   "2024-wa-vorlage.bbl"
   "2024-wa-vorlage.blg"
   (rewritten before read)
-["pdflatex"] 1749729022.99315 "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/2024-wa-vorlage.tex" "2024-wa-vorlage.pdf" "2024-wa-vorlage" 1749729025.11064 0
-  "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/2024-wa-vorlage.tex" 1749729022.3371 12418 b1bfd9116414977c953eedeff71ed239 ""
+["pdflatex"] 1749923120.3504 "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/2024-wa-vorlage.tex" "2024-wa-vorlage.pdf" "2024-wa-vorlage" 1749923122.30903 0
+  "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/2024-wa-vorlage.tex" 1749923114.7383 12605 6c04cfd37486775c2e76086b14f975ca ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1744886745.36132 157441 630ac9bca0e616d740d6f31fad22d781 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk" 1744886762.67412 49100 92316750d1e772050107514b01149317 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk" 1744886757.24681 28440 2b5bcc586d65bfdad6be7560bfcf5064 ""
@@ -90,14 +90,14 @@
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty" 1701187961.69555 13815 760b0c02f691ea230f5359c4e1de23a7 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def" 1733864970.38837 29785 9f93ab201fe5dd053afcc6c1bcf7d266 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/parskip/parskip.sty" 1744886744.6844 4288 94714aa7f535440f33181fec52a31963 ""
-  "2024-wa-vorlage.aux" 1749729024.12527 2400 742ee369ea3386e0ba7a87f3c7711927 "pdflatex"
-  "2024-wa-vorlage.bbl" 1749722984.10757 1236 94338c998f0f74ce8f77e6a5016d45bc "bibtex 2024-wa-vorlage"
-  "2024-wa-vorlage.tex" 1749729022.3371 12418 b1bfd9116414977c953eedeff71ed239 ""
-  "2024-wa-vorlage.toc" 1749729024.12688 910 063159b751f7a512f91722324686e806 "pdflatex"
+  "2024-wa-vorlage.aux" 1749923121.37248 2360 6370f3f84d6e568d13e6b519db73935c "pdflatex"
+  "2024-wa-vorlage.bbl" 1749923120.29487 1026 4a34bb87e93179c5a9535d45036e353d "bibtex 2024-wa-vorlage"
+  "2024-wa-vorlage.tex" 1749923114.7383 12605 6c04cfd37486775c2e76086b14f975ca ""
+  "2024-wa-vorlage.toc" 1749923121.37425 910 f4908459d38ae5640f3efe1ee30f04a9 "pdflatex"
   "graphics/htw_logo.pdf" 1476258444 38674 37be0a1187ef08bd560d140172e8408b ""
   "graphics/insects-5304085_640.png" 1592817958 136105 af1eeaedd0fcea3bb67b373caaba548e ""
-  "titleseite.aux" 1749729024.05365 456 271f59991d621dd0186fbe68082df7c6 "pdflatex"
-  "titleseite.tex" 1749723014.48301 534 08decaf54284982dfdb0faa9e308c1af ""
+  "titleseite.aux" 1749923121.30734 456 271f59991d621dd0186fbe68082df7c6 "pdflatex"
+  "titleseite.tex" 1749918640.04675 541 22bce964ffe33fb80e38cc29d747d979 ""
   (generated)
   "2024-wa-vorlage.aux"
   "2024-wa-vorlage.log"
