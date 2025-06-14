@@ -21,12 +21,11 @@
 \section*{Abstract}
 
 
-\;
-Im Rahmen dieses Berichts werden verschiedene Algorithmen Netzwerkstaukontrolle
-In dem heutigen Stand von Computernetzwerken werden verschiedene Protokolle zur Netzwerkstaukontrolle genutzt, 
-Ich werde mich im Rahmen dieses Berichts allerdings auf das Transmission Control Protocoll 
-(Deutsch : \textit{Übertragungssteuerungsprotokoll, TCP}) beschränken, da dies das am meisten verbreitete ist.  
-Die Algorithmen der Staukontrolle, welche in diesen Bericht einfließen sind : TCP Reno, TCP CUBIC, TCP ECN, und BBR.
+
+Dieser Bericht zielt darauf ab, aktuell benutzte Algorithmen der Netzwerkstaukontrolle in Computernetzwerken zu vergleichen.
+In dem heutigen Stand von Rechnernetzen werden verschiedene Protokolle zur Netzwerkstaukontrolle genutzt, 
+Ich werde mich im Rahmen dieses Berichts allerdings auf das Transmission Control Protocoll beschränken, da dies das am meisten verbreitete ist.  \newline
+Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP Reno, TCP CUBIC, TCP ECN, und BBR.
 \newline
 Mittels des Netzwerk Emulators \textit{MiniNet} wird ein virtuelles Netzwerk zwischen zwei Endpunkten aufgestellt, über
 welches ein Künstlicher Datenverkehr erzeugt wird.
@@ -34,7 +33,6 @@ Der genannte Datenverkehr wird anschließend aufgezeichnet und dient somit als B
 die verschiedenen Algorithmen.
 Die Auswertung, welche aus den Aufzeichungen stammt, ermöglicht dem Leser ein tieferes Verständnis über Staukontrolle in Computernetzwerken
 zu erhalten. 
-
 
 
 
@@ -77,33 +75,44 @@ Unterschrift  Michal Roziel
 \section{Einleitung}
 
 Netzwerkstaukontrolle (Englisch : \textit{ Network congestion control, CC }) ist ein essentieller Bestandteil der 
-meisten modernen Computernetzwerke. CC lässt sich in zu der Schicht 3 (Transportschicht) in dem OSI-Modell einordnen. 
+meisten modernen Computernetzwerke. 
 Wenn eine Netzwerkschnittstelle zu einem Zeitpunkt versucht eine zu große Menge an Datenpaketen aufzunehmen,
 kommt es zu Stau von Datenverkehr und zu einem potentiellen Verlust von Datenpaketen.
 Aufgrund diesem Vorkommen werden Algorithmen innerhalb von Netzwerkprotokollen verwendet, diese erkennen den Anstau von Datenverkehr im Netzwerk,
-und helfen den Fluss von Datenpaketen zu steuern. Neben dem effizienten Durchfluss von Informationen ist zeitgleich auch die ...
+und helfen den Fluss von Datenpaketen zu steuern. Neben dem effizienten Durchfluss von Informationen ist zeitgleich auch die Fairness, 
+was die Verteilung von Ressourcen einer Netzwerkschnittstelle an ihre Hosts angeht, wichtig. Auch dies wird von CC-Algorithmen gewährleistet.
+\newline
+Mit stets weiterentwickelten Rechnernetzen, und einem jährlich zunehmenden Datenverkehr, wie auch in der Deutschen Internetschnittstelle
+\textit{DE-CIX}\cite{DE-CIX2025} in Frankfurt gewinnen diese Algorithmen an Bedeutung. 
+
+
 
 
 
 \subsection{Grundlagen und Begriffe}
-In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum 
-felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus 
-elementum semper nisi.
-\begin{figure}[h]
-\begin{center}
-  \includegraphics[scale=0.35]{graphics/insects-5304085_640.png}
-  \caption{Schmetterlinge}
-  \label{schmetter}
-\end{center}
-\end{figure}
-Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat 
-vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, 
-feugiat a, tellus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus 
-et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor 
-sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
-nascetur ridiculus mus.
+
+\subsubsection{Transmission Control Protocoll}
+
+Das Transmission Control Protocoll (Deutsch : \textit{Übertragungssteuerungsprotokoll, TCP}) ist ein weit verbreitetes Netzwerkprotokoll. 
+TCP lässt sich in zu der Schicht 4 (Transportschicht) in dem OSI-Modell einordnen, hierbei liegt es zwichen der Vermittlungs- und Kommunikationsschicht.
+\newline
+Die Aufgabes des TCP Protokolls ist es, zwischen mindestens zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
+Nachrichten in zu verschicken und zu empfangen.
+
+
+
+
+
+\subsection{Algorithmen zur Staukontrolle }
+\subsubsection{TCP Reno}
+
+
+\subsubsection{TCP CUBIC}
+
+\subsubsection{TCP ECN}
+
+\subsubsection{BBR} 
+
 
 \subsection{Definitionen}
 Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, 
