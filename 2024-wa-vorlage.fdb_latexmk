@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex 2024-wa-vorlage"] 1749932963.82283 "2024-wa-vorlage.aux" "2024-wa-vorlage.bbl" "2024-wa-vorlage" 1749933615.73737 0
-  "./literatur.bib" 1749932960.66317 1948 25a419e965e56e23b9f5897ea3763d5c ""
+["bibtex 2024-wa-vorlage"] 1750003240.05035 "2024-wa-vorlage.aux" "2024-wa-vorlage.bbl" "2024-wa-vorlage" 1750004460.11252 0
+  "./literatur.bib" 1750003128.71995 2188 db004cf170cb2ea82731162626446c38 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/bibtex/bst/bibtex/alpha.bst" 1701187848.4407 23907 a5f93555796fb564b924339521f10a7c ""
-  "2024-wa-vorlage.aux" 1749933614.84394 2962 02ab12012cff84e42c578746ad82364b "pdflatex"
-  "titleseite.aux" 1749933614.79571 456 271f59991d621dd0186fbe68082df7c6 "pdflatex"
+  "2024-wa-vorlage.aux" 1750004459.16431 3003 a50dd51e9adff753674491931506880e "pdflatex"
+  "titleseite.aux" 1750004459.11544 456 271f59991d621dd0186fbe68082df7c6 "pdflatex"
   (generated)
   "2024-wa-vorlage.bbl"
   "2024-wa-vorlage.blg"
   (rewritten before read)
-["pdflatex"] 1749933613.81573 "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/2024-wa-vorlage.tex" "2024-wa-vorlage.pdf" "2024-wa-vorlage" 1749933615.73755 0
-  "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/2024-wa-vorlage.tex" 1749933613.04766 12683 b9a0a2f4a5123e3f1804ad36655d7b2f ""
+["pdflatex"] 1750004458.14732 "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/2024-wa-vorlage.tex" "2024-wa-vorlage.pdf" "2024-wa-vorlage" 1750004460.11281 0
+  "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/2024-wa-vorlage.tex" 1750004457.51546 13010 8cca890ff1c87e22ffbc0ed04b3d00a5 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1744886745.36132 157441 630ac9bca0e616d740d6f31fad22d781 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1744886753.67407 31952 0641681c0de8d0d88b5ff382abf8e23c ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk" 1744886762.67412 49100 92316750d1e772050107514b01149317 ""
@@ -92,12 +92,12 @@
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty" 1701187961.69555 13815 760b0c02f691ea230f5359c4e1de23a7 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def" 1733864970.38837 29785 9f93ab201fe5dd053afcc6c1bcf7d266 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/parskip/parskip.sty" 1744886744.6844 4288 94714aa7f535440f33181fec52a31963 ""
-  "2024-wa-vorlage.aux" 1749933614.84394 2962 02ab12012cff84e42c578746ad82364b "pdflatex"
-  "2024-wa-vorlage.bbl" 1749932964.17794 1143 fce611ad24208fc8f15a8bc1d957c86c "bibtex 2024-wa-vorlage"
-  "2024-wa-vorlage.tex" 1749933613.04766 12683 b9a0a2f4a5123e3f1804ad36655d7b2f ""
-  "2024-wa-vorlage.toc" 1749933614.8454 1333 e1ba7271b89f60eaf93e135ba15ee3b0 "pdflatex"
+  "2024-wa-vorlage.aux" 1750004459.16431 3003 a50dd51e9adff753674491931506880e "pdflatex"
+  "2024-wa-vorlage.bbl" 1750003240.41442 1298 aadf7307b4010911f3364b242d5072cc "bibtex 2024-wa-vorlage"
+  "2024-wa-vorlage.tex" 1750004457.51546 13010 8cca890ff1c87e22ffbc0ed04b3d00a5 ""
+  "2024-wa-vorlage.toc" 1750004459.16605 1337 b0539381ee7167010a1c32d3c9439a91 "pdflatex"
   "graphics/htw_logo.pdf" 1476258444 38674 37be0a1187ef08bd560d140172e8408b ""
-  "titleseite.aux" 1749933614.79571 456 271f59991d621dd0186fbe68082df7c6 "pdflatex"
+  "titleseite.aux" 1750004459.11544 456 271f59991d621dd0186fbe68082df7c6 "pdflatex"
   "titleseite.tex" 1749918640.04675 541 22bce964ffe33fb80e38cc29d747d979 ""
   (generated)
   "2024-wa-vorlage.aux"

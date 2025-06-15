@@ -22,6 +22,11 @@ DE-CIX.
 \newblock Traffic statistics frankfurt, 2025.
 \newblock Letzter Zugriff: \today.
 
+\bibitem[JF22]{kr22}
+Keith~W.Ross James~F.Kurose.
+\newblock {\em Computer Networking: A Top-Down Approach}.
+\newblock Pearson, London, 8th edition, 2022.
+
 \bibitem[Kaf05]{kaf12}
 Franz Kafka.
 \newblock {\em Die Verwandlung}.

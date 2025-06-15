@@ -25,7 +25,7 @@
 Dieser Bericht zielt darauf ab, aktuell benutzte Algorithmen der Netzwerkstaukontrolle in Computernetzwerken zu vergleichen.
 In dem heutigen Stand von Rechnernetzen werden verschiedene Protokolle zur Netzwerkstaukontrolle genutzt, 
 Ich werde mich im Rahmen dieses Berichts allerdings auf das Transmission Control Protocoll beschränken, da dies das am meisten verbreitete ist.  \newline
-Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP Reno, TCP CUBIC, TCP ECN, und BBR.
+Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP Reno, TCP BBR, TCP Vegas, und TCP ECN.
 \newline
 Mittels des Netzwerk Emulators \textit{MiniNet} wird ein virtuelles Netzwerk zwischen zwei Endpunkten aufgestellt, über
 welches ein Künstlicher Datenverkehr erzeugt wird.
@@ -95,23 +95,27 @@ Mit stets weiterentwickelten Rechnernetzen, und einem jährlich zunehmenden Date
 
 Das Transmission Control Protocoll (Deutsch : \textit{Übertragungssteuerungsprotokoll, TCP}) ist ein weit verbreitetes Netzwerkprotokoll. 
 TCP lässt sich in zu der Schicht 4 (Transportschicht) in dem OSI-Modell einordnen, hierbei liegt es zwichen der Vermittlungs- und Kommunikationsschicht.
+\newline Es wurde 1981 unter RFC 793 erstmals standarisiert.   % QUOTE RFC 793
 \newline
 Die Aufgabes des TCP Protokolls ist es, zwischen mindestens zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
 Nachrichten in zu verschicken und zu empfangen.
 
-
-
+'A transport-layer protocol [\dots] from an application’s perspective, it is as if 
+the hosts running the processes were directly connected;' \cite[241]{kr22}. 
+Dies Bedeutet, dass TCP ebenfalls eine gewisses Abstraktionsniveau abnimmt. 
 
 
 \subsection{Algorithmen zur Staukontrolle }
+
 \subsubsection{TCP Reno}
 
+\subsubsection{TCP BBR} 
 
-\subsubsection{TCP CUBIC}
+\subsubsection{TCP Vegas}
 
 \subsubsection{TCP ECN}
 
-\subsubsection{BBR} 
+
 
 
 \subsection{Definitionen}
