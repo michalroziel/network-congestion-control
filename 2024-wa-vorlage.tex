@@ -23,7 +23,7 @@
 
 
 Dieser Bericht zielt darauf ab, aktuell benutzte Algorithmen der Netzwerkstaukontrolle in Computernetzwerken zu vergleichen.
-In dem heutigen Stand von Rechnernetzen werden verschiedene Protokolle zur Netzwerkstaukontrolle genutzt, 
+In dem heutigen Stand von Rechnernetzen werden verschiedene Protokolle zur Netzwerkstaukontrolle verwendet, 
 Ich werde mich im Rahmen dieses Berichts allerdings auf das Transmission Control Protocoll beschränken, da dies das am meisten verbreitete ist.  \newline
 Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP Reno, TCP BBR, TCP Vegas, und TCP ECN.
 \newline
@@ -97,19 +97,45 @@ Das Transmission Control Protocoll (Deutsch : \textit{Übertragungssteuerungspro
 TCP lässt sich in zu der Schicht 4 (Transportschicht) in dem OSI-Modell einordnen, hierbei liegt es zwichen der Vermittlungs- und Kommunikationsschicht.
 \newline Es wurde 1981 unter RFC 793 erstmals standarisiert.   % QUOTE RFC 793
 \newline
-Die Aufgabes des TCP Protokolls ist es, zwischen mindestens zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
+Die Aufgabes des TCP Protokolls ist es, zwischen zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
 Nachrichten in zu verschicken und zu empfangen.
 
 'A transport-layer protocol [\dots] from an application’s perspective, it is as if 
 the hosts running the processes were directly connected;' \cite[241]{kr22}. 
 Dies Bedeutet, dass TCP ebenfalls eine gewisses Abstraktionsniveau
- des Nachrichtenaustausches abnimmt. 
+des Nachrichtenaustausches abnimmt. 
+\newline
+Ein klares Unterscheidungsmerkmal des TCP von dem ebenfalls bekannten User Datagramm Protocoll (UDP)
+ist, dass TCP verbindungsorientiert arbeitet, während UDP als verbindungslos gilt.
+Bei TCP wird zu Beginn ein \textit{Three-Way-Handshake} (Deutsch : \textit{Drei-Wege-Handschlag})
+wie folgt durchgeführt : 
+\newline
+Der Sender schickt zunächst eine Nachricht mit einem Verbindungswunsch an den Empfänger und setzt das Flag \textit{Synchronize, SYN} 
+Der Empfänger antwortet mit einer Bestätigung die erste Nachrichte erhalten zu haben, und schickt ebenfalls einen 
+Verbindungswunsch. Es werden die Flags SYN-ACK ()
 
 
 \subsection{Algorithmen der Staukontrolle }
 
 Algorithmen der Staukontrolle kommen zum Einsatz, wenn in einem Netzwerk ein potentieller Datenstau erkannt wird.
-In diesem Fall treten diese Algorithmen in die Arbeitsweise congestion avoidance  (Deutsch : \textit{Vermeidung von Netzwerküberlastung})
+Grundsätzlich starten die Algorithmen in dem Arbeitsmodus \textit{slow start}.
+Falls Datenstau erkannt wird, treten diese Algorithmen in den Arbeitsmodus \textit{congestion avoidance}
+(Deutsch : \textit{Vermeidung von Netzwerküberlastung}). Hiermit wird mit verschiedenen Vorgehensweisen gegen die
+Netzwerküberlastung gesteuert. 
+\newline
+Es existieren unterschiedliche Typen von CC-Algorithmen, die jeweils ihre eigenen Vor- und Nachteile haben.
+In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
+
+\subsubsection{Typen von Algorithmen der Staukontrolle}
+
+
+    \begin{itemize}
+        \item Loss-Based Algorithmen
+        
+        \item Delay-Based Algorithmen
+        
+        \item Model-Based Algorithmen
+    \end{itemize}
 
 
 \subsubsection{TCP Reno}
