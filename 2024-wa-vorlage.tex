@@ -110,10 +110,14 @@ ist, dass TCP verbindungsorientiert arbeitet, während UDP als verbindungslos gi
 Bei TCP wird zu Beginn ein \textit{Three-Way-Handshake} (Deutsch : \textit{Drei-Wege-Handschlag})
 wie folgt durchgeführt : 
 \newline
-Der Sender schickt zunächst eine Nachricht mit einem Verbindungswunsch an den Empfänger und setzt das Flag \textit{Synchronize, SYN} 
-Der Empfänger antwortet mit einer Bestätigung die erste Nachrichte erhalten zu haben, und schickt ebenfalls einen 
-Verbindungswunsch. Es werden die Flags SYN-ACK ()
+Der Sender schickt zunächst eine Nachricht mit einem Verbindungswunsch an den Empfänger und setzt das Flag 
+\textit{Synchronize, SYN} 
 
+Der Empfänger antwortet mit einer Bestätigung die erste Nachrichte erhalten zu haben, und schickt ebenfalls einen 
+Verbindungswunsch. Es werden die Flags \textit{SYN-ACK} (Synchronise-Acknowledge) gesetzt.
+Als letztes schickt derrrr Sender eine Bestätigung, dass die Nachricht des Empfängers angekommen ist, dies geschieht wieder
+mit dem Flag \textit{ACK}. Nun ist die Verbindung bereit, Daten in beide Richtungen zu übertragen.
+Nach jedem gesendeten Datenpaket folgt eine \textit{ACK} Bestätigung.
 
 \subsection{Algorithmen der Staukontrolle }
 
