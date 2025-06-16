@@ -100,8 +100,9 @@ TCP lässt sich in zu der Schicht 4 (Transportschicht) in dem OSI-Modell einordn
 Die Aufgabes des TCP Protokolls ist es, zwischen zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
 Nachrichten in zu verschicken und zu empfangen.
 
-'A transport-layer protocol [\dots] from an application’s perspective, it is as if 
-the hosts running the processes were directly connected;' \cite[241]{kr22}. 
+`` transport-layer protocol [\dots] from an application’s perspective, it is as if 
+the hosts running the processes were directly connected; '' \cite[241]{kr22}. 
+\newline
 Dies Bedeutet, dass TCP ebenfalls eine gewisses Abstraktionsniveau
 des Nachrichtenaustausches abnimmt. 
 \newline
@@ -111,13 +112,22 @@ Bei TCP wird zu Beginn ein \textit{Three-Way-Handshake} (Deutsch : \textit{Drei-
 wie folgt durchgeführt : 
 \newline
 Der Sender schickt zunächst eine Nachricht mit einem Verbindungswunsch an den Empfänger und setzt das Flag 
-\textit{Synchronize, SYN} 
-
+\textit{Synchronize, SYN}.
+\newline
 Der Empfänger antwortet mit einer Bestätigung die erste Nachrichte erhalten zu haben, und schickt ebenfalls einen 
 Verbindungswunsch. Es werden die Flags \textit{SYN-ACK} (Synchronise-Acknowledge) gesetzt.
-Als letztes schickt derrrr Sender eine Bestätigung, dass die Nachricht des Empfängers angekommen ist, dies geschieht wieder
+\newline
+Als letztes schickt der Sender eine Bestätigung, dass die Nachricht des Empfängers angekommen ist, dies geschieht wieder
 mit dem Flag \textit{ACK}. Nun ist die Verbindung bereit, Daten in beide Richtungen zu übertragen.
 Nach jedem gesendeten Datenpaket folgt eine \textit{ACK} Bestätigung.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[height = 5cm]{./graphics/3way.png}
+    \caption{\textit{Three-Way-Handshake.}}  \cite[296]{kr22}
+\end{figure}
+
+
 
 \subsection{Algorithmen der Staukontrolle }
 

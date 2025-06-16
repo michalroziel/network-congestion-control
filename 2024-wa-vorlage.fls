@@ -138,6 +138,13 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/font
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 OUTPUT 2024-wa-vorlage.toc
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsx1440.tfm
+INPUT ./graphics/3way.png
+INPUT ./graphics/3way.png
+INPUT ./graphics/3way.png
+INPUT ./graphics/3way.png
+INPUT ./graphics/3way.png
+INPUT ./graphics/3way.png
+INPUT ./graphics/3way.png
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT ./2024-wa-vorlage.bbl
 INPUT ./2024-wa-vorlage.bbl
