@@ -25,9 +25,9 @@
 Dieser Bericht zielt darauf ab, aktuell benutzte Algorithmen der Netzwerkstaukontrolle in Computernetzwerken zu vergleichen.
 In dem heutigen Stand von Rechnernetzen werden verschiedene Protokolle zur Netzwerkstaukontrolle verwendet, 
 Ich werde mich im Rahmen dieses Berichts allerdings auf das Transmission Control Protocoll beschränken, da dies das am meisten verbreitete ist.  \newline
-Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP Reno, TCP BBR, TCP Vegas, und TCP ECN.
+Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP Reno, TCP BBR, TCP Vegas, und ECN.
 \newline
-Mittels des Netzwerk Emulators \textit{MiniNet} wird ein virtuelles Netzwerk zwischen zwei Endpunkten aufgestellt, über
+Mittels des Open-Source Netzwerksimulators \textit{NS-3} wird ein virtuelles Netzwerk zwischen zwei Endpunkten aufgestellt, über
 welches ein Künstlicher Datenverkehr erzeugt wird.
 Der genannte Datenverkehr wird anschließend aufgezeichnet und dient somit als Basis für den Vergleich der Staukontrolle durch 
 die verschiedenen Algorithmen.
@@ -57,7 +57,7 @@ haben kann.
 Saarbrücken, den \today
 
 \smallskip
-Unterschrift  Michal Roziel
+Unterschrift  Micha\l{} Roziel
 
 
 
@@ -74,7 +74,7 @@ Unterschrift  Michal Roziel
 
 \section{Einleitung}
 
-Netzwerkstaukontrolle (Englisch : \textit{ Network congestion control, CC }) ist ein essentieller Bestandteil der 
+Network congestion control (CC)  \footnote{\textit{Network congestion control} (Deutsch : \textit{ Netzwerkstaukontrolle }) } ist ein essentieller Bestandteil der 
 meisten modernen Computernetzwerke. 
 Wenn eine Netzwerkschnittstelle zu einem Zeitpunkt versucht eine zu große Menge an Datenpaketen aufzunehmen,
 kommt es zu Stau von Datenverkehr und zu einem potentiellen Verlust von Datenpaketen.
@@ -93,33 +93,35 @@ Mit stets weiterentwickelten Rechnernetzen, und einem jährlich zunehmenden Date
 
 \subsubsection{Transmission Control Protocoll}
 
-Das Transmission Control Protocoll (Deutsch : \textit{Übertragungssteuerungsprotokoll, TCP}) ist ein weit verbreitetes Netzwerkprotokoll. 
+Das Transmission Control Protocoll (TCP)\footnote{\textit{Das Transmission Control Protocoll} (Deutsch : \textit{Übertragungssteuerungsprotokoll})} ist ein weit verbreitetes Netzwerkprotokoll. 
 TCP lässt sich in zu der Schicht 4 (Transportschicht) in dem OSI-Modell einordnen, hierbei liegt es zwichen der Vermittlungs- und Kommunikationsschicht.
-\newline Es wurde 1981 unter RFC 793 erstmals standarisiert.   % QUOTE RFC 793
-\newline
+\newline Es wurde 1981 unter RFC 793 erstmals standarisiert. \cite{rfc793}   % QUOTE RFC 793
 Die Aufgabes des TCP Protokolls ist es, zwischen zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
 Nachrichten in zu verschicken und zu empfangen.
 
-`` transport-layer protocol [\dots] from an application’s perspective, it is as if 
-the hosts running the processes were directly connected; '' \cite[241]{kr22}. 
-\newline
+\begin{quote}
+``transport-layer protocol [\dots] from an application’s perspective, it is as if 
+the hosts running the processes were directly connected;'' \cite[241]{kr22}.      
+\end{quote}
+ 
+
 Dies Bedeutet, dass TCP ebenfalls eine gewisses Abstraktionsniveau
 des Nachrichtenaustausches abnimmt. 
 \newline
 Ein klares Unterscheidungsmerkmal des TCP von dem ebenfalls bekannten User Datagramm Protocoll (UDP)
 ist, dass TCP verbindungsorientiert arbeitet, während UDP als verbindungslos gilt.
-Bei TCP wird zu Beginn ein \textit{Three-Way-Handshake} (Deutsch : \textit{Drei-Wege-Handschlag})
+Bei TCP wird zu Beginn ein \textit{Three-Way-Handshake}\footnote{\textit{Three-Way-Handshake} (Deutsch : \textit{Drei-Wege-Handschlag})} 
 wie folgt durchgeführt : 
 \newline
 Der Sender schickt zunächst eine Nachricht mit einem Verbindungswunsch an den Empfänger und setzt das Flag 
-\textit{Synchronize, SYN}.
+\textit{Synchronize, \textbf{SYN}}.
 \newline
 Der Empfänger antwortet mit einer Bestätigung die erste Nachrichte erhalten zu haben, und schickt ebenfalls einen 
-Verbindungswunsch. Es werden die Flags \textit{SYN-ACK} (Synchronise-Acknowledge) gesetzt.
+Verbindungswunsch. Es werden die Flags \textit{\textbf{SYN-ACK}} (Synchronise-Acknowledge) gesetzt.
 \newline
 Als letztes schickt der Sender eine Bestätigung, dass die Nachricht des Empfängers angekommen ist, dies geschieht wieder
-mit dem Flag \textit{ACK}. Nun ist die Verbindung bereit, Daten in beide Richtungen zu übertragen.
-Nach jedem gesendeten Datenpaket folgt eine \textit{ACK} Bestätigung.
+mit dem Flag \textit{\textbf{ACK}}. Nun ist die Verbindung bereit, Daten in beide Richtungen zu übertragen.
+Nach jedem gesendeten Datenpaket folgt eine \textit{\textbf{ACK}} Bestätigung.
 
 \begin{figure}[ht]
     \centering
@@ -134,8 +136,8 @@ Nach jedem gesendeten Datenpaket folgt eine \textit{ACK} Bestätigung.
 Algorithmen der Staukontrolle kommen zum Einsatz, wenn in einem Netzwerk ein potentieller Datenstau erkannt wird.
 Grundsätzlich starten die Algorithmen in dem Arbeitsmodus \textit{slow start}.
 Falls Datenstau erkannt wird, treten diese Algorithmen in den Arbeitsmodus \textit{congestion avoidance}
-(Deutsch : \textit{Vermeidung von Netzwerküberlastung}). Hiermit wird mit verschiedenen Vorgehensweisen gegen die
-Netzwerküberlastung gesteuert. 
+\footnote{\textit{congestion avoidance} (Deutsch : \textit{Vermeidung von Netzwerküberlastung}).}
+ Hiermit wird mit verschiedenen Vorgehensweisen gegen die Netzwerküberlastung gesteuert. 
 \newline
 Es existieren unterschiedliche Typen von CC-Algorithmen, die jeweils ihre eigenen Vor- und Nachteile haben.
 In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
@@ -145,6 +147,7 @@ In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
 
     \begin{itemize}
         \item Loss-Based Algorithmen
+        
         
         \item Delay-Based Algorithmen
         
@@ -158,18 +161,32 @@ In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
 
 \subsubsection{TCP Vegas}
 
-\subsubsection{TCP ECN}
+\subsubsection{ECN}
 
 
 
 
 \subsection{Definitionen}
 
+\subsubsection{Queuing Delay}
+Queuing Delay beschreibt das Warten einer \textit{Queue}\footnote{\textit{Queue} (Deutsch : \textit{Warteschlange})} 
+auf das Versenden durch das gegebene Netzwerk.
 
-\section{Analyse und Bewertung}
+
+\section{Versuchsaufbau}
+Mit einem Test innerhalb des Command Line Simulators \textit{NS-3} lässt sich ein belieiger 
+CC-Algorithmus ausführen.
 
 
-\subsection{Die Verwandlung}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[height = 5cm]{./graphics/bbrCW.pdf}
+    \caption{Congestion Window des BBR Algorithmus.}
+    
+\end{figure}
+
+
+\subsection{Analyse der Ergebnisse}
 
 
 \section{Ergebnisse und Diskussion}

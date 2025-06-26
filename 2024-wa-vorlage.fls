@@ -137,7 +137,14 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/font
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 OUTPUT 2024-wa-vorlage.toc
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0800.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1000.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0700.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1000.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsx1440.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbi1200.tfm
 INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
@@ -146,6 +153,12 @@ INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1200.tfm
+INPUT ./graphics/bbrCW.pdf
+INPUT ./graphics/bbrCW.pdf
+INPUT ./graphics/bbrCW.pdf
+INPUT ./graphics/bbrCW.pdf
+INPUT ./graphics/bbrCW.pdf
+INPUT ./graphics/bbrCW.pdf
 INPUT ./2024-wa-vorlage.bbl
 INPUT ./2024-wa-vorlage.bbl
 INPUT 2024-wa-vorlage.bbl
@@ -158,8 +171,18 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/p
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx2488.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1000.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1000.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0700.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0700.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1200.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1440.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1440.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
