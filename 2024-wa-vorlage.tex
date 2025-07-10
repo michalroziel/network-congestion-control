@@ -7,6 +7,13 @@
 \usepackage{amsmath}
 \usepackage[a4paper,left=25mm,right=35mm,top=25mm,bottom=30mm]{geometry}
 \usepackage{parskip}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listingsutf8}
+\usepackage{listings}
+
+\usepackage{verbatim} % in the preamble
+\usepackage{subcaption}  % in your preamble
 	
 
 \begin{document}
@@ -103,7 +110,7 @@ Nachrichten in zu verschicken und zu empfangen.
 ``transport-layer protocol [\dots] from an application’s perspective, it is as if 
 the hosts running the processes were directly connected;'' \cite[241]{kr22}.      
 \end{quote}
- 
+
 
 Dies Bedeutet, dass TCP ebenfalls eine gewisses Abstraktionsniveau
 des Nachrichtenaustausches abnimmt. 
@@ -125,7 +132,7 @@ Nach jedem gesendeten Datenpaket folgt eine \textit{\textbf{ACK}} Bestätigung.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[height = 5cm]{./graphics/3way.png}
+    \includegraphics[height = 7cm]{./graphics/3way.png}
     \caption{\textit{Three-Way-Handshake.}}  \cite[296]{kr22}
 \end{figure}
 
@@ -169,22 +176,55 @@ In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
 \subsection{Definitionen}
 
 \subsubsection{Queuing Delay}
-Queuing Delay beschreibt das Warten einer \textit{Queue}\footnote{\textit{Queue} (Deutsch : \textit{Warteschlange})} 
+Queuing Delay beschreibt das Warten einer \textit{Queue}
 auf das Versenden durch das gegebene Netzwerk.
 
 
 \section{Versuchsaufbau}
+
 Mit einem Test innerhalb des Command Line Simulators \textit{NS-3} lässt sich ein belieiger 
 CC-Algorithmus ausführen.
 
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[height = 5cm]{./graphics/bbrCW.pdf}
-    \caption{Congestion Window des BBR Algorithmus.}
-    
-\end{figure}
+\textbf{Netzwerktopologie}
 
+Zunächst einmal definieren wir die Netzwerktopologie auf welcher die CC-Algorithmen
+laufen werden.
+\small
+\begin{verbatim}
+            1000 Mbps           10 Mbps           1000 Mbps
+  Sender -------------- R1 -------------- R2 -------------- Receiver
+            5 ms               10 ms              5 ms
+\end{verbatim}
+
+\begin{figure}[htp]
+
+
+    \centering
+
+    % Erster Algo : BBR
+    \subcaptionbox{Congestion Window des BBR Algorithmus.
+    \label{fig:bbr}}[0.43\textwidth]{
+        \includegraphics[width=\linewidth]{graphics/bbrCW.pdf}
+    }
+    \hfill
+    % Zweiter Algo : Reno (NewRen)
+    \subcaptionbox{Congestion Window des NewReno Algorithmus.
+    \label{fig:newreno}}[0.43\textwidth]{
+        \includegraphics[width=\linewidth]{graphics/newRenoCW.pdf}
+    }
+
+    % bisschen frei lassen
+    \par\vspace{0.8em} 
+
+        \subcaptionbox{Congestion Window des Cubic Algorithmus.
+    \label{fig:cubic}}[0.43\textwidth]{
+        \includegraphics[width=\linewidth]{graphics/cubicCW.pdf}
+    }
+
+    \caption{Vergleich der Congestion Window-Verläufe zwischen BBR und NewReno.}
+    \label{fig:cwnd-comparison}
+\end{figure}
 
 \subsection{Analyse der Ergebnisse}
 

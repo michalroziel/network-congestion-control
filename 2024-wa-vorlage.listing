@@ -1,0 +1,6 @@
+//            1000 Mbps           10 Mbps           1000 Mbps
+//  Sender -------------- R1 -------------- R2 -------------- Receiver
+//------------5ms-----------------10 ms--------------5 ms-----
+
+// The link between R1 and R2 is a bottleneck link with 10 Mbps. All other
+// links are 1000 Mbps.
