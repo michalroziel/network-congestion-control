@@ -14,6 +14,7 @@
 
 \usepackage{verbatim} % in the preamble
 \usepackage{subcaption}  % in your preamble
+\usepackage{float}
 	
 
 \begin{document}
@@ -32,8 +33,10 @@
 Dieser Bericht zielt darauf ab, aktuell benutzte Algorithmen der Netzwerkstaukontrolle in Computernetzwerken zu vergleichen.
 In dem heutigen Stand von Rechnernetzen werden verschiedene Protokolle zur Netzwerkstaukontrolle verwendet, 
 Ich werde mich im Rahmen dieses Berichts allerdings auf das Transmission Control Protocoll beschränken, da dies das am meisten verbreitete ist.  \newline
-Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP Reno, TCP BBR, TCP Vegas, und ECN.
+Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP BBR,
+TCP NewReno, TCP Cubic, und TCP Vegas.
 \newline
+
 Mittels des Open-Source Netzwerksimulators \textit{NS-3} wird ein virtuelles Netzwerk zwischen zwei Endpunkten aufgestellt, über
 welches ein Künstlicher Datenverkehr erzeugt wird.
 Der genannte Datenverkehr wird anschließend aufgezeichnet und dient somit als Basis für den Vergleich der Staukontrolle durch 
@@ -81,7 +84,7 @@ Unterschrift  Micha\l{} Roziel
 
 \section{Einleitung}
 
-Network congestion control (CC)  \footnote{\textit{Network congestion control} (Deutsch : \textit{ Netzwerkstaukontrolle }) } ist ein essentieller Bestandteil der 
+Network congestion control (CC) ist ein essentieller Bestandteil der 
 meisten modernen Computernetzwerke. 
 Wenn eine Netzwerkschnittstelle zu einem Zeitpunkt versucht eine zu große Menge an Datenpaketen aufzunehmen,
 kommt es zu Stau von Datenverkehr und zu einem potentiellen Verlust von Datenpaketen.
@@ -100,11 +103,12 @@ Mit stets weiterentwickelten Rechnernetzen, und einem jährlich zunehmenden Date
 
 \subsubsection{Transmission Control Protocoll}
 
-Das Transmission Control Protocoll (TCP)\footnote{\textit{Das Transmission Control Protocoll} (Deutsch : \textit{Übertragungssteuerungsprotokoll})} ist ein weit verbreitetes Netzwerkprotokoll. 
+Das Transmission Control Protocoll (TCP) ist ein weit verbreitetes Netzwerkprotokoll. 
 TCP lässt sich in zu der Schicht 4 (Transportschicht) in dem OSI-Modell einordnen, hierbei liegt es zwichen der Vermittlungs- und Kommunikationsschicht.
-\newline Es wurde 1981 unter RFC 793 erstmals standarisiert. \cite{rfc793}   % QUOTE RFC 793
+\newline TCP wurde 1981 unter RFC 793 erstmals standarisiert. \cite{rfc793}  \newline
 Die Aufgabes des TCP Protokolls ist es, zwischen zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
 Nachrichten in zu verschicken und zu empfangen.
+
 
 \begin{quote}
 ``transport-layer protocol [\dots] from an application’s perspective, it is as if 
@@ -114,25 +118,27 @@ the hosts running the processes were directly connected;'' \cite[241]{kr22}.
 
 Dies Bedeutet, dass TCP ebenfalls eine gewisses Abstraktionsniveau
 des Nachrichtenaustausches abnimmt. 
-\newline
+
+
 Ein klares Unterscheidungsmerkmal des TCP von dem ebenfalls bekannten User Datagramm Protocoll (UDP)
 ist, dass TCP verbindungsorientiert arbeitet, während UDP als verbindungslos gilt.
-Bei TCP wird zu Beginn ein \textit{Three-Way-Handshake}\footnote{\textit{Three-Way-Handshake} (Deutsch : \textit{Drei-Wege-Handschlag})} 
+Bei TCP wird zu Beginn ein \textit{Three-Way-Handshake}
 wie folgt durchgeführt : 
-\newline
+
 Der Sender schickt zunächst eine Nachricht mit einem Verbindungswunsch an den Empfänger und setzt das Flag 
 \textit{Synchronize, \textbf{SYN}}.
 \newline
 Der Empfänger antwortet mit einer Bestätigung die erste Nachrichte erhalten zu haben, und schickt ebenfalls einen 
 Verbindungswunsch. Es werden die Flags \textit{\textbf{SYN-ACK}} (Synchronise-Acknowledge) gesetzt.
-\newline
+
+
 Als letztes schickt der Sender eine Bestätigung, dass die Nachricht des Empfängers angekommen ist, dies geschieht wieder
 mit dem Flag \textit{\textbf{ACK}}. Nun ist die Verbindung bereit, Daten in beide Richtungen zu übertragen.
 Nach jedem gesendeten Datenpaket folgt eine \textit{\textbf{ACK}} Bestätigung.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[height = 7cm]{./graphics/3way.png}
+    \includegraphics[height = 8cm]{./graphics/3way.png}
     \caption{\textit{Three-Way-Handshake.}}  \cite[296]{kr22}
 \end{figure}
 
@@ -143,7 +149,8 @@ Nach jedem gesendeten Datenpaket folgt eine \textit{\textbf{ACK}} Bestätigung.
 Algorithmen der Staukontrolle kommen zum Einsatz, wenn in einem Netzwerk ein potentieller Datenstau erkannt wird.
 Grundsätzlich starten die Algorithmen in dem Arbeitsmodus \textit{slow start}.
 Falls Datenstau erkannt wird, treten diese Algorithmen in den Arbeitsmodus \textit{congestion avoidance}
-\footnote{\textit{congestion avoidance} (Deutsch : \textit{Vermeidung von Netzwerküberlastung}).}
+
+
  Hiermit wird mit verschiedenen Vorgehensweisen gegen die Netzwerküberlastung gesteuert. 
 \newline
 Es existieren unterschiedliche Typen von CC-Algorithmen, die jeweils ihre eigenen Vor- und Nachteile haben.
@@ -168,7 +175,7 @@ In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
 
 \subsubsection{TCP Vegas}
 
-\subsubsection{ECN}
+\subsubsection{Cubic}
 
 
 
@@ -179,16 +186,15 @@ In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
 Queuing Delay beschreibt das Warten einer \textit{Queue}
 auf das Versenden durch das gegebene Netzwerk.
 
-
+\clearpage
 \section{Versuchsaufbau}
 
-Mit einem Test innerhalb des Command Line Simulators \textit{NS-3} lässt sich ein belieiger 
-CC-Algorithmus ausführen.
+Mit einem Test innerhalb des Command Line Simulators \textit{NS-3.45} lässt sich ein belibieger CC-Algorithmus ausführen.
 
 
 \textbf{Netzwerktopologie}
 
-Zunächst einmal definieren wir die Netzwerktopologie auf welcher die CC-Algorithmen
+Zunächst definieren wir die Netzwerktopologie auf welcher die CC-Algorithmen
 laufen werden.
 \small
 \begin{verbatim}
@@ -196,37 +202,49 @@ laufen werden.
   Sender -------------- R1 -------------- R2 -------------- Receiver
             5 ms               10 ms              5 ms
 \end{verbatim}
+So ist es möglich, einen Netzwerkstau zu simulieren, dieser bleibt für jeden Algorithmus gleich.
 
-\begin{figure}[htp]
+Mittels der Navigation in das Directory \textit{ns-3} per Kommandozeile und dem Befehl
+\small
+\begin{verbatim}
+    ./ns3 run examples/tcp/tcp-bbr-example.cc
+\end{verbatim}
 
 
+\begin{figure}[H]
     \centering
 
-    % Erster Algo : BBR
-    \subcaptionbox{Congestion Window des BBR Algorithmus.
-    \label{fig:bbr}}[0.43\textwidth]{
+    \begin{subfigure}{0.40\textwidth}
+
         \includegraphics[width=\linewidth]{graphics/bbrCW.pdf}
-    }
+        \caption{BBR}
+        \label{fig:bbr}
+    \end{subfigure}
     \hfill
-    % Zweiter Algo : Reno (NewRen)
-    \subcaptionbox{Congestion Window des NewReno Algorithmus.
-    \label{fig:newreno}}[0.43\textwidth]{
+    \begin{subfigure}{0.40\textwidth}
         \includegraphics[width=\linewidth]{graphics/newRenoCW.pdf}
-    }
-
-    % bisschen frei lassen
-    \par\vspace{0.8em} 
-
-        \subcaptionbox{Congestion Window des Cubic Algorithmus.
-    \label{fig:cubic}}[0.43\textwidth]{
+        \caption{NewReno}
+        \label{fig:newreno}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.40\textwidth}
         \includegraphics[width=\linewidth]{graphics/cubicCW.pdf}
-    }
+        \caption{Cubic}
+        \label{fig:cubic}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.40\textwidth}
+        \includegraphics[width=\linewidth]{graphics/vegasCW.pdf}
+        \caption{Vegas}
+        \label{fig:vegas}
+    \end{subfigure}
 
-    \caption{Vergleich der Congestion Window-Verläufe zwischen BBR und NewReno.}
-    \label{fig:cwnd-comparison}
+    \caption{Vergleich der Congestion Windows von BBR, NewReno, Cubic und Vegas.}
+    \label{fig:cwnd-all}
 \end{figure}
 
 \subsection{Analyse der Ergebnisse}
+Wie an den \textit{Congestion Window} Graphen erkennbar, besitzt jeder der vorgestellten Algorithmen einen  
 
 
 \section{Ergebnisse und Diskussion}
