@@ -1,0 +1,31 @@
+\begin{thebibliography}{1}
+
+\bibitem{DE-CIX2025}
+DE-CIX, ``Traffic statistics frankfurt,'' 2025.
+\newblock Letzter Zugriff: \today.
+
+\bibitem{rfc793}
+J.~Postel, ``transmission control protocol,'' 1981.
+
+\bibitem{kr22}
+K.~W. James~F.Kurose, {\em Computer Networking: A Top-Down Approach}.
+\newblock London: Pearson, 8th~ed., 2022.
+
+\bibitem{cardwell2016bbr}
+N.~Cardwell, Y.~Cheng, C.~S. Gunn, S.~Hassas~Yeganeh, and V.~Jacobson, ``Bbr:
+  Congestion-based congestion control: Measuring bottleneck bandwidth and
+  round-trip propagation time,'' {\em Queue}, vol.~14, no.~5, 2016.
+
+\bibitem{tang24BBRns3}
+L.~Tang, ``Bbr fairness evaluation using ns-3,'' 2024.
+
+\bibitem{DBLP:journals/corr/cs-NI-9809099}
+R.~Jain, D.~Chiu, and W.~Hawe, ``A quantitative measure of fairness and
+  discrimination for resource allocation in shared computer systems,'' {\em
+  CoRR}, vol.~cs.NI/9809099, 1998.
+
+\bibitem{ns3BBR}
+M.~P.~T. Aarti~Nandagiri, Vivek~Jain, ``Tcp bbr example,'' 2020.
+\newblock Copyright (c) 2018-20 NITK Surathkal.
+
+\end{thebibliography}

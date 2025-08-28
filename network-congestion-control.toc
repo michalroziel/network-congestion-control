@@ -1,0 +1,25 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Einleitung}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Grundlagen und Begriffe}{1}{}%
+\contentsline {subsubsection}{\numberline {1.1.1}Transmission Control Protocoll}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Algorithmen der Staukontrolle}{2}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}TCP BBR}{2}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}TCP Reno}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.3}TCP Cubic}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.4}TCP Vegas}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.5}Merkmale der CC Algorithmen auf einen Blick}{4}{}%
+\contentsline {subsection}{\numberline {1.3}Definitionen}{4}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}Queuing Delay}{4}{}%
+\contentsline {section}{\numberline {2}Versuchsaufbau}{5}{}%
+\contentsline {subsection}{\numberline {2.1}Analyse der Ergebnisse}{6}{}%
+\contentsline {section}{\numberline {3}Ergebnisse und Diskussion}{6}{}%
+\contentsline {section}{\numberline {4}Fazit und Schlussfolgerungen}{6}{}%
+\contentsline {subsection}{\numberline {4.1}Offene Fragen}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Diskussion}{6}{}%
+\contentsline {section}{Literaturverzeichnis}{7}{}%
+\contentsline {section}{Anhang}{8}{}%
+\contentsline {subsection}{\numberline {.1}Zus^^c3^^a4tzliche Abbildungen}{8}{}%
+\contentsline {subsection}{\numberline {.2}GnuPlot Skript zur Erstellung der CWND Graphen}{8}{}%
+\contentsline {section}{\numberline {A}Datenmaterial}{8}{}%
+\contentsline {section}{\numberline {B}Web-Standards}{8}{}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
