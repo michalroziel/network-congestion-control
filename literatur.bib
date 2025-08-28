@@ -1,4 +1,18 @@
+% Kontrolle über die Bibliography Style, damit alle im .bib angegebenen Informationen auch angezeigt werden,
+% und es immernoch im Style : [1][2][3]... bleibt
+%https://tex.stackexchange.com/questions/592594/ieeetran-bstcontrol-does-not-work
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+  CTLuse_url = "yes",
+  CTLuse_doi = "yes",
+  CTLuse_eprint = "yes",
+  CTLuse_article_title = "yes"
+}
 
+@misc{ns3-simu,
+  title        = {a discrete-event network simulator for Internet systems},
+  url         = {https://www.nsnam.org/},
+  note         = {Version 3.45}
+}
 
 @misc{DE-CIX2025,
    author = {DE-CIX},
@@ -30,13 +44,47 @@
   url = {https://wiki.geant.org/pages/releaseview.action?pageId=121340614}
 }
 
-@article{tang24BBRns3,
+@misc{tang24BBRns3,
   author       = {Linchuan Tang},
   title        = {BBR Fairness Evaluation Using NS-3},
   howpublished = {arXiv preprint arXiv:2410.22560 [cs.NI]},
   year         = {2024},
-  month        = october,
   url          = {https://arxiv.org/abs/2410.22560v1}
+}
+
+@article{HArheeInjXuCUBIC,
+author = {Ha, Sangtae and Rhee, Injong and Xu, Lisong},
+title = {CUBIC: a new TCP-friendly high-speed TCP variant},
+year = {2008},
+issue_date = {July 2008},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {42},
+number = {5},
+issn = {0163-5980},
+url = {https://doi.org/10.1145/1400097.1400105},
+doi = {10.1145/1400097.1400105},
+journal = {SIGOPS Oper. Syst. Rev.},
+month = jul,
+pages = {64–74},
+numpages = {11},
+biburl = {https://dl.acm.org/doi/10.1145/1400097.1400105}
+}
+
+@misc{rfc2582,
+    series =    {Request for Comments},
+    number =    2582,
+    howpublished =  {RFC 2582},
+    publisher = {RFC Editor},
+    doi =       {10.17487/RFC2582},
+    url =       {https://www.rfc-editor.org/info/rfc2582},
+    author =    {Tom Henderson and Sally Floyd},
+    title =     {{The NewReno Modification to TCP's Fast Recovery Algorithm}},
+    pagetotal = 12,
+    year =      1999,
+    month =     apr,
+    day =       1,
+    abstract =  {This document describes a specific algorithm for responding to partial acknowledgments, referred to as NewReno. This memo defines an Experimental Protocol for the Internet community.},
 }
 
 @article{DBLP:journals/corr/cs-NI-9809099,

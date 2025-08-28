@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.12.11)  28 AUG 2025 19:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.12.11)  29 AUG 2025 00:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -554,46 +554,58 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count324
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count325
-) (/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/float/float.sty
+)
+Package caption Info: Option `declare type' requires the `newfloat' package on input line 17.
+ (/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newfloat/newfloat.sty
+Package: newfloat 2023/10/01 v1.2 Defining new floating environments (AR)
+)
+Package newfloat Info: New float `listing' with options `' on input line 17.
+\c@listing=\count326
+\newfloat@ftype=\count327
+Package newfloat Info: float type `listing'=8 on input line 17.
+Package tocbasic Info: setting babel extension for `lolisting' on input line 17.
+Package caption Info: New subtype `sublisting' on input line 17.
+\c@sublisting=\count328
+ (/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count326
+\c@float@type=\count329
 \float@exts=\toks41
 \float@box=\box78
 \@float@everytoks=\toks42
 \@floatcapt=\box79
 ) (/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count327
+\l__color_backend_stack_int=\count330
 \l__pdf_internal_box=\box80
 ) (network-congestion-control.aux (titleseite.aux))
 \openout1 = `network-congestion-control.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
  (/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count328
+\scratchcounter=\count331
 \scratchdimen=\dimen283
 \scratchbox=\box81
-\nofMPsegments=\count329
-\nofMParguments=\count330
+\nofMPsegments=\count332
+\nofMParguments=\count333
 \everyMPshowfont=\toks43
-\MPscratchCnt=\count331
+\MPscratchCnt=\count334
 \MPscratchDim=\dimen284
-\MPnumerator=\count332
-\makeMPintoPDFobject=\count333
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
 \everyMPtoPDFconversion=\toks44
 ) (/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -635,12 +647,13 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count334
-Package tocbasic Info: setting babel extension for `lol' on input line 20.
+\c@lstlisting=\count337
+Package tocbasic Info: setting babel extension for `lol' on input line 23.
 \scr@dte@lstlisting@maxnumwidth=\skip68
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
+Package newfloat Info: `float' package detected.
 \openout2 = `titleseite.aux'.
 
 (titleseite.tex
@@ -657,7 +670,7 @@ Package pdftex.def Info: graphics/htw_logo.pdf  used on input line 5.
 
 
 {/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map} <./graphics/htw_logo.pdf>])
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
  []
 
@@ -677,7 +690,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--38
 [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 86--98
+Underfull \hbox (badness 10000) in paragraph at lines 92--104
 
  []
 
@@ -686,7 +699,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--98
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 169--173
+Underfull \hbox (badness 10000) in paragraph at lines 175--179
 
  []
 
@@ -699,25 +712,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--173
 [4
 
 ]
-<graphics/bbrCW.pdf, id=55, 284.06125pt x 198.7425pt>
+<graphics/bbrCW.pdf, id=56, 284.06125pt x 198.7425pt>
 File: graphics/bbrCW.pdf Graphic file (type pdf)
 <use graphics/bbrCW.pdf>
-Package pdftex.def Info: graphics/bbrCW.pdf  used on input line 282.
+Package pdftex.def Info: graphics/bbrCW.pdf  used on input line 303.
 (pdftex.def)             Requested size: 170.71393pt x 119.44353pt.
-<graphics/newRenoCW.pdf, id=56, 284.06125pt x 198.7425pt>
+<graphics/newRenoCW.pdf, id=57, 284.06125pt x 198.7425pt>
 File: graphics/newRenoCW.pdf Graphic file (type pdf)
 <use graphics/newRenoCW.pdf>
-Package pdftex.def Info: graphics/newRenoCW.pdf  used on input line 288.
+Package pdftex.def Info: graphics/newRenoCW.pdf  used on input line 309.
 (pdftex.def)             Requested size: 170.71393pt x 119.44353pt.
-<graphics/cubicCW.pdf, id=57, 284.06125pt x 198.7425pt>
+<graphics/cubicCW.pdf, id=58, 284.06125pt x 198.7425pt>
 File: graphics/cubicCW.pdf Graphic file (type pdf)
 <use graphics/cubicCW.pdf>
-Package pdftex.def Info: graphics/cubicCW.pdf  used on input line 294.
+Package pdftex.def Info: graphics/cubicCW.pdf  used on input line 315.
 (pdftex.def)             Requested size: 170.71393pt x 119.44353pt.
-<graphics/vegasCW.pdf, id=58, 284.06125pt x 198.7425pt>
+<graphics/vegasCW.pdf, id=59, 284.06125pt x 198.7425pt>
 File: graphics/vegasCW.pdf Graphic file (type pdf)
 <use graphics/vegasCW.pdf>
-Package pdftex.def Info: graphics/vegasCW.pdf  used on input line 300.
+Package pdftex.def Info: graphics/vegasCW.pdf  used on input line 321.
 (pdftex.def)             Requested size: 170.71393pt x 119.44353pt.
 
 
@@ -741,33 +754,40 @@ pdfTeX warning: pdflatex (file ./graphics/vegasCW.pdf): PDF inclusion: multiple 
 [7
 
 ]
-<graphics/3way.png, id=180, 1005.7575pt x 948.54375pt>
+<graphics/3way.png, id=181, 1005.7575pt x 948.54375pt>
 File: graphics/3way.png Graphic file (type png)
 <use graphics/3way.png>
-Package pdftex.def Info: graphics/3way.png  used on input line 347.
+Package pdftex.def Info: graphics/3way.png  used on input line 369.
 (pdftex.def)             Requested size: 301.68353pt x 284.52756pt.
 
 
 [8
 
- <./graphics/3way.png>] (network-congestion-control.aux (titleseite.aux))
+ <./graphics/3way.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
+
+ []
+
+
+
+[9] (network-congestion-control.aux (titleseite.aux))
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23795 strings out of 473682
- 507697 string characters out of 5707353
- 1007563 words of memory out of 5000000
- 46496 multiletter control sequences out of 15000+600000
- 575412 words of font info for 67 fonts, out of 8000000 for 9000
+ 24005 strings out of 473682
+ 511607 string characters out of 5707353
+ 1013434 words of memory out of 5000000
+ 46699 multiletter control sequences out of 15000+600000
+ 578349 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,10n,107p,11028b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx2488.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1440.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1728.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on network-congestion-control.pdf (12 pages, 1271463 bytes).
+ </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx2488.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1440.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1728.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on network-congestion-control.pdf (13 pages, 1336060 bytes).
 PDF statistics:
- 799 PDF objects out of 1000 (max. 8388607)
+ 864 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

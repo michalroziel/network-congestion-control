@@ -12,15 +12,21 @@
 \tcbuselibrary{listingsutf8}
 \usepackage{listings}
 
-\usepackage{verbatim} % in the preamble
-\usepackage{subcaption}  % in your preamble
+\usepackage{verbatim} 
+\usepackage{subcaption}  
+\DeclareCaptionType{listing}[Listing][List of Listings]
 \usepackage{float}
 	
 
+
+
 \begin{document}
+
 
 \pagenumbering{roman}
 \pagestyle{plain}
+
+
 
 % Einbinden der Titelseite
 \include{titleseite}
@@ -36,7 +42,7 @@ zu vergleichen.
 Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP BBR,
 TCP NewReno, TCP Cubic, und TCP Vegas.  \newline
 
-Mittels des Open-Source Netzwerksimulators \textit{NS-3} wird ein virtuelles Netzwerk mit einer 10Mbit/s Engstelle zwischen zwei Endpunkten aufgestellt. 
+Mittels des Open-Source Netzwerksimulators \textit{NS-3}\cite{ns3-simu} wird ein virtuelles Netzwerk mit einer 10Mbit/s Engstelle zwischen zwei Endpunkten aufgestellt. 
 In diesem Netzwerk wird zunächst ein künstlicher Datenverkehr erzeugt.
 Der genannte Datenverkehr wird anschließend aufgezeichnet und das dabei entstehende \textit{Congestion Window}(CW) dient als Basis für den Vergleich.
 Die unterschiedlichen CW's werden schließlich analysiert und in Bezug auf das gegebene Szenario evaluiert.
@@ -127,7 +133,7 @@ des Nachrichtenaustausches abnimmt.
 
 Ein klares Unterscheidungsmerkmal des TCP von dem ebenfalls bekannten User Datagramm Protocoll (UDP) ist, dass TCP verbindungsorientiert arbeitet, 
 während UDP als verbindungslos gilt. Zudem werden bei TCP Daten in Form von Packets verschickt, während man bei UDP von Datagrammen spricht. \newline
-Bei TCP wird zu Beginn ein \textit{Three-Way-Handshake}
+Bei TCP wird zu Beginn ein \textit{Three-Way Handshake}
 wie folgt durchgeführt : 
 
 Der Sender schickt zunächst eine Nachricht mit einem Verbindungswunsch an den Empfänger und setzt das Flag 
@@ -140,7 +146,7 @@ Verbindungswunsch. Es werden die Flags \textit{\textbf{SYN-ACK}} (Synchronise-Ac
 Als letztes schickt der Sender eine Bestätigung, dass die Nachricht des Empfängers angekommen ist, dies geschieht wieder
 mit dem Flag \textit{\textbf{ACK}}. Nun ist die Verbindung bereit, Daten in beide Richtungen zu übertragen.
 Nach jedem gesendeten Datenpaket folgt eine \textit{\textbf{ACK}} Bestätigung.
-\newline Die Abbildung \ref{fig:three-way-handshake} im Anhang visualisiert den Three-Way—Handshake.
+\newline Die Abbildung \ref{fig:three-way handshake} im Anhang visualisiert den Three-Way Handshake.
 
 
 
@@ -153,7 +159,7 @@ Grundsätzlich starten die Algorithmen in dem Arbeitsmodus \textit{slow start}.
 Falls Datenstau erkannt wird, treten diese Algorithmen in die Phase \textit{congestion avoidance}.
 
 
- Hiermit wird mit verschiedenen Vorgehensweisen gegen die Netzwerküberlastung gesteuert. 
+Hiermit wird mit verschiedenen Vorgehensweisen gegen die Netzwerküberlastung gesteuert. 
 \newline
 Es existieren unterschiedliche Typen von CC-Algorithmen, die jeweils ihre eigenen Vor- und Nachteile haben.
 In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
@@ -163,7 +169,7 @@ In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
 
 
 \subsubsection{TCP BBR} 
-Der \textit{Bottleneck Bandwith and Round-Trip-Time} Algorithmus wurde erstmals in dem von der
+Der \textit{Bottleneck Bandwith and Round-Trip Time} (BBR) Algorithmus wurde erstmals in dem von der
 \textit{Association for Computing Machinery} (ACM) veröffentlichten Magazin ACM vorgestellt.\cite{cardwell2016bbr}. 
 
 Seit 2016 wurden 3 Versionen entwickelt. Diese werden jeweils mit \textit{BBRv\_x} gekennzeichnet, 
@@ -179,7 +185,7 @@ unterteilt werden kann : \newline
 \end{enumerate}
 
 
-Während andere CC-Algorithmen wie etwa Reno oder CUBIC auf Paketverlust reagieren, misst BBR die vorliegende Engpassbreite sowie RTT,
+Während andere CC-Algorithmen wie etwa NewReno oder CUBIC auf Paketverlust reagieren, misst BBR die vorliegende Engpassbreite sowie RTT,
 und bestimmt daraus die Sende-Rate, welche anschließend in dem Netzwerk eingesetzt wird. 
 Da BBR nicht direkt auf Paketverlust reagiert, kommt es mit gut mit zufälligen Paketverlust zurecht, hat aber zeitgleich
 Schwierigkeiten mit der Fairness was die Verteilung von Ressourcen angeht : 
@@ -194,11 +200,15 @@ Essentially, the reason for the unstable or unequal unfairness is the absence of
 
 Die Fairness kann hierbei mit dem zwischen 0 und 1 liegenden Jain's Fairness Index gemessen werden.\cite{DBLP:journals/corr/cs-NI-9809099}
 
-\subsubsection{TCP Reno}
+\subsubsection{TCP NewReno}
+Der TCP Reno Algorithmus wurde erstmal 1999 mit dem RFC 2582 eingeführt.\cite{rfc2582}
+NewReno ist ein \textit{Loss-Based} Algorithmus, das bedeutet der
+Arbeitsmodus \textit{congestion avoidance} tritt ein, falls ein Paketverlust erkannt wird.
+Das Wachstum des \texttt{cwnd} ist hierbei linear gegenüber der Anzahl der Pakete.
+
 
 \subsubsection{TCP Cubic}
-Der Algorithmus TCP Cubic ist ein Loss-Based CC-Algorithmus, das bedeutet der
-Arbeitsmodus \textit{congestion avoidance} tritt ein, falls ein Paketverlust erkannt wird.
+Cubic ist ebenfalls ein \textit{Loss-Based} Algorithmus.
 
 Die Wachstumsfunktion, welche anschließend die neue Größe des \textit{Congestion Window}
 beschreibt, wird definiert als : $ W(t) = C(t-K)^3 + W\text{max}.$  
@@ -206,11 +216,11 @@ Hierbei ist \textit{W} die größe des Congestion Windows, \textit{C} eine Cubic
 \textit{t} die Zeit seit dem letzten Paketverlust, \textit{K} die Zeit, welche \textit{TCP Cubic} benötigt 
 um wieder \textit{W\text{max}} zu erreichen.
 
-Mit der Sensitivität auf Paketverlust $\beta$ kann \textit{K} wie folgt berechnet werden :
-\[
-K = \sqrt[3]{\frac{W_{\text{max}} \cdot \beta}{C}}
-\]
+Mit der Sensitivität auf Paketverlust $\beta$ kann \textit{K} wie folgt berechnet werden \cite{HArheeInjXuCUBIC} :
 
+\[
+K = \sqrt[3]{\frac{W_{\text{max}} \cdot \beta}{C}}     
+\]
 
 
 \subsubsection{TCP Vegas}
@@ -233,15 +243,27 @@ K = \sqrt[3]{\frac{W_{\text{max}} \cdot \beta}{C}}
 \end{table}
 
 \subsection{Definitionen}
+Hier werden dem Leser einige Definitionen über die in dem Bericht vorkommenden Begriffe näher gebracht.
 
 \subsubsection{Queuing Delay}
 Queuing Delay beschreibt das Warten einer \textit{Queue}
-auf das Versenden von Packets durch das gegebene Netzwerk.
+auf das Versenden von Paketen durch das gegebene Netzwerk.
+
+
+\subsubsection{Congestion Window}
+Das \textit{Congestion Window}(\texttt{cwnd}) beschreibt die maximale Anzahl von Segmenten (Paketen) welche gleichzeitig über ein Netzwerk gesendet werden können, ohne 
+dass Datenstau auftritt. Falls es zu Engpässen kommt, fällt der Verlauf von \texttt{cwnd}.
+
+\subsubsection{Round-Trip Time}
+
+Der Round-Trip Time ist die Zeit von dem Absenden eines Segments bis zu dem Eintreffen der jeweiligen Bestätigungsnachricht \textit{\textbf{ACK}} beim Sender.
+
+
 
 \clearpage
 \section{Versuchsaufbau}
 
-Mit einem Test innerhalb des Command Line Simulators \textit{NS-3.45} lässt sich ein beliebieger CC-Algorithmus ausführen.
+Mit einem Test innerhalb des Command Line Simulators \textit{NS-3.45}\cite{ns3-simu} lässt sich ein beliebieger CC-Algorithmus ausführen.
 
 
 \textbf{Netzwerktopologie}
@@ -256,7 +278,7 @@ laufen werden.\cite{ns3BBR}
 \end{verbatim}
 So ist es möglich, einen Netzwerkstau zu simulieren, dieser bleibt für jeden Algorithmus gleich.
 
-Durch das Verändern der folgenden \textit{C++} Codezeile der Datei \textit{tcp-bbr-example.cc} mit dem Namen des gewünschten Algorithmus lässt sich der Test unter gleichen Netzwerkbedingungen für die anderen Tesstfälle ausführen :
+Durch das Verändern der folgenden \textit{C++} Codezeile der Datei \verb|tcp-bbr-example.cc| mit dem Namen des gewünschten Algorithmus lässt sich der Test unter gleichen Netzwerkbedingungen für die anderen Tesstfälle ausführen :
 
 \small
 \begin{verbatim}
@@ -270,8 +292,7 @@ Mittels der Navigation in das Directory \textit{ns-3.45} per Kommandozeile und d
     ./ns3 run examples/tcp/tcp-bbr-example.cc
 \end{verbatim}
 lässt sich der jeweilige Testlauf ausführen.
- Die aufgezeichneten Informationen können mit dem im Anhang 
- in \ref{sec:gnuplot-skript} hinterlegten Skript visualisiert werden.
+ Die aufgezeichneten Informationen können mit dem im Anhang hinterlegten Skript visualisiert werden.
 
 
 \begin{figure}[H]
@@ -328,7 +349,8 @@ von Datenstau angeht.
 % Hier beginnt das Literaturverzeichnis
 \clearpage
 \renewcommand\refname{Literaturverzeichnis}
-\bibliographystyle{ieeetr}
+\bibliographystyle{IEEEtran}
+
 \bibliography{literatur}
 \addcontentsline{toc}{section}{Literaturverzeichnis}
 
@@ -340,22 +362,21 @@ von Datenstau angeht.
 
 \addcontentsline{toc}{section}{Anhang}
 
-\subsection{Zusätzliche Abbildungen}
+\section{Zusätzliche Abbildungen}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[height=10cm]{graphics/3way.png}
     \caption{Detaillierte Darstellung des Three-Way Handshake.}
-    \label{fig:three-way-handshake}
+    \label{fig:three-way handshake}
 \end{figure}
 
 
 
-\subsection{GnuPlot Skript zur Erstellung der CWND Graphen}
-\label{sec:gnuplot-skript}
+\section{GnuPlot Skript zur Erstellung der CWND Graphen}
+Hier folgt das Skript mit dem die in Kapitel 2 vorgestellten \texttt{cwnd} Graphen erstellt worden sind.
 
 \begin{verbatim}
-
 set terminal pdfcairo size 10cm,7cm enhanced font "Helvetica,14"
 set output "cwnd.pdf"
 
@@ -365,8 +386,36 @@ set grid
 set key top right
 
 plot "cwnd.dat" using 1:2 with lines lw 2 lc rgb "red" title "CWND"
-
 \end{verbatim}
+
+
+\section{Nicht erfüllte Vorgaben}
+Aufgrund des Mangels von unter anderem der Anzahl an komplexen Formeln zu dem Thema des Berichts folgen hier die 
+restlichen Vorgaben.
+
+\subsection{Formel von Bayes}
+Die Bayessche Formel ist eine grundlegende Formel in der Statistik. Sie beschreibt die bedingte Wahrscheinlichkeit für
+das Aufreten eines Ereignisses $A_k$ gegeben Ereignis $B$. 
+Ereignis $A_k$ wird oft als die \textbf{\textit{a priori}} Wahrscheinlichkeit bezeichnet.
+
+\[
+Sei \; P(B)>0. \; A_1 \dot{\cup} \ldots \dot{\cup} A_n \;  =\Omega \; \text{Dann gilt :} \newline
+\]
+
+\[
+P(A_k | B) = \frac{P(A_k)  \cdot P(B | A_k)}{\sum_{i=1}^{n}P(A_i  \cdot P(B | A_i))}
+\]
+
+\subsection{Beweis der Formel von Bayes}
+
+Der Satz liefert : \newline
+
+\[
+P(A_k | B) = \frac{P(A_k \cap B)}{P(B) = \frac{P(A_k-)} \cdot \frac{P(B \cap A_k)}{(A_k)}{P(B)}}
+\]
+
+
+
 
 
 \section{Datenmaterial}
