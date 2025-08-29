@@ -15,6 +15,7 @@
 \contentsline {subsection}{\numberline {2.1}Analyse der Ergebnisse}{6}{}%
 \contentsline {section}{\numberline {3}Ergebnisse und Diskussion}{6}{}%
 \contentsline {section}{\numberline {4}Fazit und Schlussfolgerungen}{7}{}%
+\contentsline {section}{\numberline {5}Ausblick}{7}{}%
 \contentsline {section}{Literaturverzeichnis}{8}{}%
 \contentsline {section}{Anhang}{9}{}%
 \contentsline {section}{\numberline {A}Zus^^c3^^a4tzliche Abbildungen}{9}{}%
@@ -22,4 +23,5 @@
 \contentsline {section}{\numberline {C}Nicht erf^^c3^^bcllte Vorgaben}{10}{}%
 \contentsline {subsection}{\numberline {C.1}Formel von Bayes}{10}{}%
 \contentsline {subsection}{\numberline {C.2}Beweis der Formel von Bayes}{10}{}%
+\contentsline {subsection}{\numberline {C.3}Komplexe Tabelle}{10}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

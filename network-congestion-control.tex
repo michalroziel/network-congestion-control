@@ -19,7 +19,15 @@
 \usepackage{subcaption}  
 \DeclareCaptionType{listing}[Listing][List of Listings]
 \usepackage{float}
-	
+
+% für die komplexe table im Amhamng 
+% https://mylatexnotes.wordpress.com/2017/07/31/text-x-mark-to-match-checkmark/
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{adjustbox}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}} 
+\newcommand{\xmark}{\ding{55}} 
 
 
 
@@ -407,6 +415,20 @@ Hierbei wird nicht direkt auf Verlust geachtet, sondern wie beschrieben die RTT 
 
 
 \section{Fazit und Schlussfolgerungen}
+Ziel dieses Berichts war es die Staukontrollverfahren unter identischen Bedingungen zu vergleichen.
+Dies ist mit \textbf{ns-3} gelungen, und die Algorithmen konnten in Form vom \texttt{cwnd} Graphen aufgezeichnet
+werden.
+Auch wenn diese Verfahren das gleiche Ziel befolgen, nämlich den Datenfluss von Paketen über das Netzwerk zu 
+verwalten, tun Sie dies mit verschiedenen Vorgehensweisen. Es soll eine möglichst hohe Bandbreite gewährleistet
+werden, und gleichzeitig kein Verlust von Paketen an Netzwerkschnittstellen erfolgen. Es ist klar, dass CC-Algorithmen
+ein nötiges Bestandteil der heutigen Rechnernetze ist, und bleibt.
+
+
+\section{Ausblick}
+Um den Rahmen dieses Berichts einfach zu halten, habe Ich mich entschieden, nur das \texttt{cwnd} in den Vergleich 
+einzubringen. Interessant wäre zusätzlich die Messung der Bandbreite, oder etwa im Fall von \textbf{BBR} mehrere Datenflüsse(\textit{Flows}) 
+eizuführen, und diese mit \textbf{ns-3} und dem \textbf{JFI} auszuwerten. 
+
 
 
 % Hier beginnt das Literaturverzeichnis
@@ -453,7 +475,7 @@ plot "cwnd.dat" using 1:2 with lines lw 2 lc rgb "red" title "CWND"
 
 
 \section{Nicht erfüllte Vorgaben}
-Aufgrund des Mangels von unter anderem der Anzahl an komplexen Formeln zu dem Thema des Berichts folgen hier die 
+Aufgrund des Mangels von unter anderem der Anzahl an komplexen Formeln und Tabellen zu dem Thema des Berichts folgen hier die 
 restlichen Vorgaben.
 
 \subsection{Formel von Bayes}
@@ -477,6 +499,40 @@ P(A_k | B) = \frac{P(A_k \cap B)}{P(B)} = \frac{P(A_k) \cdot \frac{P(B \cap A_k)
 \]
 
 $\square$
+
+\subsection{Komplexe Tabelle}
+
+\begin{table}[ht]
+    \centering
+
+    \begin{adjustbox}{max width=0.8\textwidth}
+    \rowcolors{2}{gray!10}{white}
+
+
+        \begin{tabular}{@{} l l c c c @{}}
+        \toprule
+
+        \textbf{Programmiersprache} & \textbf{Bemerkung} & \textbf{Funktional} & \textbf{Prozedural} & \textbf{Objektorientiert} \\
+        \midrule
+            
+            Java & JVM & \xmark & \xmark & \cmark   \\
+            OCamkl & Nachfolger von StandardML & \cmark & \xmark & \xmark \\
+            Lisp & Common Lisp & \cmark & \xmark & \xmark \\
+            Pascal & ISO Pascal & \xmark & \cmark & \xmark \\ 
+            C & Low-Level & \xmark & \cmark & \xmark \\
+
+        \bottomrule
+
+            
+        \end{tabular}
+    
+    \end{adjustbox}
+
+    \caption{Einige Programmiersprachen und ihre Einordnung ob Sie Funktional, Prozedural,
+     oder Objektorientiert sind.}
+    \label{tab:compar}
+    
+\end{table}
 
 
 \end{document}
