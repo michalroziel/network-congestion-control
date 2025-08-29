@@ -44,12 +44,13 @@ J.~Postel, ``transmission control protocol,'' Marina Del Rey, California, 1981.
 K.~W. James~F.Kurose, \emph{Computer Networking: A Top-Down Approach},
   8th~ed.\hskip 1em plus 0.5em minus 0.4em\relax London: Pearson, 2022.
 
-\bibitem{cardwell2016bbr}
+\bibitem{cardwell-iccrg-bbr-congestion-control-02}
 \BIBentryALTinterwordspacing
-N.~Cardwell, Y.~Cheng, C.~S. Gunn, S.~H. Yeganeh, and V.~Jacobson, ``Bbr:
-  Congestion-based congestion control: Measuring bottleneck bandwidth and
-  round-trip propagation time,'' \emph{Queue}, vol.~14, no.~5, 2016. [Online].
-  Available: \url{https://queue.acm.org/detail.cfm?id=3022184}
+N.~Cardwell, Y.~Cheng, S.~H. Yeganeh, I.~Swett, and V.~Jacobson, ``{BBR
+  Congestion Control},'' Internet Engineering Task Force, Internet-Draft
+  draft-cardwell-iccrg-bbr-congestion-control-02, Mar. 2022, work in Progress.
+  [Online]. Available:
+  \url{https://datatracker.ietf.org/doc/draft-cardwell-iccrg-bbr-congestion-control/02/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{tang24BBRns3}
@@ -93,6 +94,13 @@ L.~Peterson, L.~Brakmo, and B.~Davie, \emph{TCP Congestion Control: A Systems
 M.~P.~T. Aarti~Nandagiri, Vivek~Jain, ``Tcp bbr example,'' 2020, copyright (c)
   2018-20 NITK Surathkal. [Online]. Available:
   \url{https://github.com/nsnam/ns-3-dev-git/blob/master/examples/tcp/tcp-bbr-example.cc}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pandorafms}
+\BIBentryALTinterwordspacing
+P.~F. team, ``Why does cubic take us back to tcp congestion control?'' Online,
+  2021. [Online]. Available:
+  \url{https://pandorafms.com/blog/tcp-congestion-control/}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

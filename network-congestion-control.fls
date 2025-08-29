@@ -313,6 +313,13 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/font
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ectt0800.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ectt0800.tfm
+INPUT ./graphics/vegas.png
+INPUT ./graphics/vegas.png
+INPUT ./graphics/vegas.png
+INPUT ./graphics/vegas.png
+INPUT ./graphics/vegas.png
+INPUT ./graphics/vegas.png
+INPUT ./graphics/vegas.png
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1095.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ectt1095.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1095.tfm
@@ -348,6 +355,7 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/font
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmex10.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1095.tfm
 INPUT ./network-congestion-control.bbl
 INPUT ./network-congestion-control.bbl
 INPUT network-congestion-control.bbl
@@ -359,7 +367,6 @@ INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1095.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbi1095.tfm
 INPUT network-congestion-control.aux
 INPUT ./titleseite.aux
@@ -369,6 +376,8 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/p
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1095.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx2488.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx2488.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1095.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1095.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1095.pk

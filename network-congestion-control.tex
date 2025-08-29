@@ -173,7 +173,7 @@ In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
 
 \subsubsection{TCP BBR} 
 Der \textit{Bottleneck Bandwith and Round-Trip Time} (\textbf{BBR}) Algorithmus wurde erstmals in dem von der
-\textit{Association for Computing Machinery} (\textbf{ACM}) veröffentlichten Magazin ACM vorgestellt. \cite{cardwell2016bbr}
+\textit{Association for Computing Machinery} (\textbf{ACM}) veröffentlichten Magazin ACM vorgestellt. \cite{cardwell-iccrg-bbr-congestion-control-02}
 
 Seit 2016 wurden 3 Versionen entwickelt. Diese werden jeweils mit \textit{BBRv\_x} gekennzeichnet, 
 wobei \textit{x} die entsprechende Version beschreibt. 
@@ -233,15 +233,29 @@ von Paketen mit dem erwarteten Wert vegleicht. \cite{tcpccCh5}
 Auf Basis dieses Vergleiches wird dann bestimmt, wie viele Pakete ohne Verluste verschickt werden können.
 
 Der erwartete Wert ist hier der Idealwert von dem Durchsatz, welcher über das Netzwerk geesendet werden könnte, 
-falls keine Warteschlange vorliegen würde. Dieser kann wie folgt bestimmt werden : \\
-$ ExpectedRate = \frac{\text{\texttt{cwnd}}}{BaseRTT}$
+falls keine Warteschlange vorliegen würde. Dieser kann wie folgt bestimmt werden : 
+$ ExpectedRate = \frac{\text{\texttt{cwnd}}}{BaseRTT}$ \cite{tcpccCh5}
 wobei $BaseRTT$ die minimale RTT (vgl. \ref{rtt-def}) beschreibt.
 
 
+\begin{figure}[ht] 
+    \centering
+    \includegraphics[height = 5cm]{./graphics/vegas.png}
+    \caption{Beispiel von Vegas \texttt{cwnd} \& Vegleich von erwarteten und 
+    tatsächlichen Durchsatz.\cite{tcpccCh5}} 
+    \label{fig:vegasCWandThroughput}
+\end{figure}
 
-\clearpage
+Abbildung \ref{fig:vegasCWandThroughput} visualisiert das \texttt{cwnd} (vgl. \ref{cw-def}) und die 
+dazugehörigen Durchsätze (erwartet \& tatsächlich) für ein Beispiel Vegas Durchlauf.
+Die in blau eingezeichnete Linie beschreibt den erwarteten Durchsatz, während die schwarz
+gefärbte Linie den tatsächlichen Durchsatz darstellt.
+ 
+
 
 \subsubsection{Merkmale der CC Algorithmen auf einen Blick}
+Hier werden dem Leser unterschiedliche Merkmale von \textbf{CC} Algorithmen verständlich in einer 
+Tabelle aufgelistet.
 
 \begin{table}[ht]
 \centering
@@ -258,11 +272,6 @@ wobei $BaseRTT$ die minimale RTT (vgl. \ref{rtt-def}) beschreibt.
 
 \subsection{Definitionen}
 Hier werden dem Leser einige Definitionen über die in dem Bericht vorkommenden Begriffe näher gebracht.
-
-\subsubsection{Queuing Delay}
-Queuing Delay beschreibt das Warten einer \textit{Queue}
-auf das Versenden von Paketen durch das gegebene Netzwerk.
-
 
 \subsubsection{Congestion Window} \label{cw-def}
 Das \textit{Congestion Window}(\texttt{cwnd}) beschreibt die maximale Anzahl von Segmenten (Paketen) welche gleichzeitig über ein Netzwerk gesendet werden können, ohne 
@@ -346,7 +355,7 @@ lässt sich der jeweilige Testlauf ausführen.
 Wie an den \textit{Congestion Window} Graphen erkennbar, besitzt jeder 
 der vorgestellten Algorithmen eine eigene Herangehensweise was  das Regulieren 
 von Datenstau angeht.
-Die RTT wird bei ~40 Milisekunden liegen, da die Verzögerung aufgrund
+Die RTT wird bei ungefähr $40$ Milisekunden liegen, da die Verzögerung aufgrund
 der Netzwerktopologie bei \texttt{5ms + 10ms + 5ms} in jede Richtung liegt. 
 
 \subsection*{BBR (a)}
@@ -375,18 +384,29 @@ da hier der Graph kubisch verläuft. Ebenfalls zu erkennen sind Plateaus, in den
 
 In Abbildung 1 (d) wächst das \texttt{cwnd} ohne große Einbrüche. Dieser Verlauf passt zu Vegas, da der Algorithmus 
 das \texttt{cwnd} nur langsam erhöht wenn ein Engpass erkannt wird. Somit wird die Warteschlange an Paketen klein gehalten.
+Wie an dem Graphen erkennbar, fällt das \texttt{cwnd} Verhalten linear.
 
 
 \section{Ergebnisse und Diskussion}
+Aufgrund der vorher durchgeführten Analyse werden hier die daraus gewonnenen \texttt{cwnd}-Ergebnissen präsentiert. 
+
+\textbf{BBR} weist periodisch auftretende Einbrüche auf, welche sich allerdings auf \textit{ProbeRTT} zurückführen lassen.
+Grundsätzlich ist das Sendeverhalten von BBR stabil, und die auftretenden Warteschlangen werden regelmäßig abgebaut.
+Bei mehreren, nebenläufigen Übertragungen hat BBR Schwierigkeiten mit der Fairness, allerdings wurden diese in den späteren
+Versionen adressiert. Da wie beschreiben der Verlust von Paketen nicht das primäre Signal ist, eignet sich BBR für 
+Netzwerke in denen oft ein zufälliger Verlust auftritt, wie etwa bei WLAN. \newline
+\textbf{NewReno} welcher auch im Linux Kernel vertreten ist, hat eine lineare Steigung und abrupte Einbrüche.
+Da dieser Algorithmus stark auf den Verlust von Paketen reagiert, kann es bei Netzwerken mit zufälligen Signalschwankungen
+zu Unterauslastung kommen, hierbei wird aufgrund von ständig aufeinanderfolgenden \textit{congestion avoidance} Phasen
+nicht die volle Bandbreite des Netzwerks ausgenutzt. \newline
+\textbf{Cubic} kann durch die kubische Wachstumskurve effizient nach Einbrüchen des \texttt{cwnd} wieder die gewünschte 
+Kapazität an Paketen wiederfinden. Heutzutage wurd Cubic in Linux, aber auch in Netzwerken mit hohen Bandbreiten verwendet.\cite{pandorafms} \newline
+\textbf{Vegas} besitzt duch die langsame Steigung des \texttt{cwnd} eine niedrige Latenz.
+Hierbei wird nicht direkt auf Verlust geachtet, sondern wie beschrieben die RTT gemessen, verglichen, und anschließend entschieden.
+
 
 
 \section{Fazit und Schlussfolgerungen}
-
-
-\subsection{Offene Fragen}
-
-
-\subsection{Diskussion}
 
 
 % Hier beginnt das Literaturverzeichnis
@@ -417,7 +437,7 @@ das \texttt{cwnd} nur langsam erhöht wenn ein Engpass erkannt wird. Somit wird 
 
 
 \section{GnuPlot Skript zur Erstellung der CWND Graphen}
-Hier folgt das Skript mit dem die in Kapitel 2 vorgestellten \texttt{cwnd} Graphen erstellt worden sind.
+Hier folgt das Skript mit dem die in Abbildung \ref{fig:cwnd-all} vorgestellten \texttt{cwnd} Graphen erstellt worden sind.
 
 \begin{verbatim}
 set terminal pdfcairo size 10cm,7cm enhanced font "Helvetica,14"
@@ -458,13 +478,6 @@ P(A_k | B) = \frac{P(A_k \cap B)}{P(B)} = \frac{P(A_k) \cdot \frac{P(B \cap A_k)
 
 $\square$
 
-
-
-\section{Datenmaterial}
-
-
-\section{Web-Standards}
-O
 
 \end{document}
 
