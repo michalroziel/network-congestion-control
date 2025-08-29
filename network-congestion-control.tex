@@ -12,6 +12,9 @@
 \tcbuselibrary{listingsutf8}
 \usepackage{listings}
 
+\usepackage{amssymb}
+\usepackage{cite}
+
 \usepackage{verbatim} 
 \usepackage{subcaption}  
 \DeclareCaptionType{listing}[Listing][List of Listings]
@@ -89,7 +92,7 @@ Unterschrift  Micha\l{} Roziel
 
 \section{Einleitung}
 
-Network congestion control (CC) ist ein essentieller Bestandteil der 
+Network congestion control (\textbf{CC}) ist ein essentieller Bestandteil der 
 meisten modernen Computernetzwerke. 
 Wenn eine Netzwerkschnittstelle zu einem Zeitpunkt versucht eine zu große Menge an Datenpaketen aufzunehmen,
 kommt es zu Stau von Datenverkehr und zu einem potentiellen Verlust von Datenpaketen.
@@ -114,7 +117,7 @@ TCP oder UDP.
 
 \subsubsection{Transmission Control Protocoll}
 
-Das Transmission Control Protocoll (TCP) ist ein weit verbreitetes Netzwerkprotokoll. 
+Das Transmission Control Protocoll (\textbf{TCP}) ist ein weit verbreitetes Netzwerkprotokoll. 
 TCP lässt sich in zu der Schicht 4 (Transportschicht) in dem OSI-Modell einordnen, hierbei liegt es zwichen der Vermittlungs- und Kommunikationsschicht.
 \newline TCP wurde 1981 unter RFC 793 erstmals standarisiert. \cite{rfc793}  \newline
 Die Aufgabes des TCP Protokolls ist es, zwischen zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
@@ -169,19 +172,19 @@ In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
 
 
 \subsubsection{TCP BBR} 
-Der \textit{Bottleneck Bandwith and Round-Trip Time} (BBR) Algorithmus wurde erstmals in dem von der
-\textit{Association for Computing Machinery} (ACM) veröffentlichten Magazin ACM vorgestellt.\cite{cardwell2016bbr}. 
+Der \textit{Bottleneck Bandwith and Round-Trip Time} (\textbf{BBR}) Algorithmus wurde erstmals in dem von der
+\textit{Association for Computing Machinery} (\textbf{ACM}) veröffentlichten Magazin ACM vorgestellt. \cite{cardwell2016bbr}
 
 Seit 2016 wurden 3 Versionen entwickelt. Diese werden jeweils mit \textit{BBRv\_x} gekennzeichnet, 
-wobei \textit{x} die entsprechende Version beschreibt. \newline
+wobei \textit{x} die entsprechende Version beschreibt. 
 BBR ist ein modellbasiertes Staukontrollverfahren, dessen Arbeitsweise in 4 Phasen
 unterteilt werden kann : \newline
 
 \begin{enumerate}
     \item \textit{STARTUP}(Startphase)
     \item \textit{DRAIN}(Abbau des Staus)
-    \item \textit{PROBE\_BW}(Proben der Bandweite)
-    \item \textit{PROBE\_RTT}(Messen der Round-Trip-Time)
+    \item \textit{ProbeBW}(Messen der Bandbreite)
+    \item \textit{ProbeRTT}(Messen der Round-Trip-time)
 \end{enumerate}
 
 
@@ -198,22 +201,22 @@ Essentially, the reason for the unstable or unequal unfairness is the absence of
 \end{quote}
  
 
-Die Fairness kann hierbei mit dem zwischen 0 und 1 liegenden Jain's Fairness Index gemessen werden.\cite{DBLP:journals/corr/cs-NI-9809099}
+Die Fairness kann hierbei mit dem zwischen 0 und 1 liegenden Jain's Fairness (\textbf{JFI}) Index gemessen werden.\cite{DBLP:journals/corr/cs-NI-9809099}
 
 \subsubsection{TCP NewReno}
-Der TCP Reno Algorithmus wurde erstmal 1999 mit dem RFC 2582 eingeführt.\cite{rfc2582}
+Der TCP \textbf{NewReno} Algorithmus wurde erstmal 1999 mit dem RFC 2582 eingeführt.\cite{rfc2582}
 NewReno ist ein \textit{Loss-Based} Algorithmus, das bedeutet der
 Arbeitsmodus \textit{congestion avoidance} tritt ein, falls ein Paketverlust erkannt wird.
-Das Wachstum des \texttt{cwnd} ist hierbei linear gegenüber der Anzahl der Pakete.
+Das Wachstum des \texttt{cwnd} (vgl.\ref{cw-def})  ist hierbei linear gegenüber der Anzahl der Pakete.
 
 
 \subsubsection{TCP Cubic}
-Cubic ist ebenfalls ein \textit{Loss-Based} Algorithmus.
+\textbf{Cubic} ist ebenfalls ein \textit{Loss-Based} Algorithmus.
 
 Die Wachstumsfunktion, welche anschließend die neue Größe des \textit{Congestion Window}
-beschreibt, wird definiert als : $ W(t) = C(t-K)^3 + W\text{max}.$  
+beschreibt, wird definiert als : $ W(t) = C(t-K)^3 + W_{max}$.  
 Hierbei ist \textit{W} die größe des Congestion Windows, \textit{C} eine Cubic-Konstante, 
-\textit{t} die Zeit seit dem letzten Paketverlust, \textit{K} die Zeit, welche \textit{TCP Cubic} benötigt 
+\textit{t} die Zeit seit dem letzten Paketverlust, und \textit{K} die Zeit, welche \textit{TCP Cubic} benötigt 
 um wieder \textit{W\text{max}} zu erreichen.
 
 Mit der Sensitivität auf Paketverlust $\beta$ kann \textit{K} wie folgt berechnet werden \cite{HArheeInjXuCUBIC} :
@@ -224,6 +227,17 @@ K = \sqrt[3]{\frac{W_{\text{max}} \cdot \beta}{C}}
 
 
 \subsubsection{TCP Vegas}
+\textbf{Vegas} ist ein Avoidance-basierter CC-Algorithmus, welcher 1994 vorgestellt wurde.
+Im Kapitel 5. von dem Buch \textit{TCP Congestion Control : A Systems Approach} wird beschrieben, dass Vegas den gemessenen Durchsatz 
+von Paketen mit dem erwarteten Wert vegleicht. \cite{tcpccCh5}
+Auf Basis dieses Vergleiches wird dann bestimmt, wie viele Pakete ohne Verluste verschickt werden können.
+
+Der erwartete Wert ist hier der Idealwert von dem Durchsatz, welcher über das Netzwerk geesendet werden könnte, 
+falls keine Warteschlange vorliegen würde. Dieser kann wie folgt bestimmt werden : \\
+$ ExpectedRate = \frac{\text{\texttt{cwnd}}}{BaseRTT}$
+wobei $BaseRTT$ die minimale RTT (vgl. \ref{rtt-def}) beschreibt.
+
+
 
 \clearpage
 
@@ -250,13 +264,13 @@ Queuing Delay beschreibt das Warten einer \textit{Queue}
 auf das Versenden von Paketen durch das gegebene Netzwerk.
 
 
-\subsubsection{Congestion Window}
+\subsubsection{Congestion Window} \label{cw-def}
 Das \textit{Congestion Window}(\texttt{cwnd}) beschreibt die maximale Anzahl von Segmenten (Paketen) welche gleichzeitig über ein Netzwerk gesendet werden können, ohne 
 dass Datenstau auftritt. Falls es zu Engpässen kommt, fällt der Verlauf von \texttt{cwnd}.
 
-\subsubsection{Round-Trip Time}
+\subsubsection{Round-Trip Time} \label{rtt-def}
 
-Der Round-Trip Time ist die Zeit von dem Absenden eines Segments bis zu dem Eintreffen der jeweiligen Bestätigungsnachricht \textit{\textbf{ACK}} beim Sender.
+Der Round-Trip Time (\textbf{RTT})ist die Zeit von dem Absenden eines Segments bis zu dem Eintreffen der jeweiligen Bestätigungsnachricht \textit{\textbf{ACK}} beim Sender.
 
 
 
@@ -332,6 +346,35 @@ lässt sich der jeweilige Testlauf ausführen.
 Wie an den \textit{Congestion Window} Graphen erkennbar, besitzt jeder 
 der vorgestellten Algorithmen eine eigene Herangehensweise was  das Regulieren 
 von Datenstau angeht.
+Die RTT wird bei ~40 Milisekunden liegen, da die Verzögerung aufgrund
+der Netzwerktopologie bei \texttt{5ms + 10ms + 5ms} in jede Richtung liegt. 
+
+\subsection*{BBR (a)}
+
+Das im Graph in Abbildung 1(a) gezeigte \texttt{cwnd} weist auf klare, periodische Einbrüche des Verlaufs auf, diese lassen
+sich auf die Phase \textit{ProbeRTT} des Algorithmus zurückführen. Dies unterscheidet BBR von den anderen
+CC-Algorithmen, da hier ein Einbruch im \texttt{cwnd} nicht direkt ein Hinweis auf Paketverlust ist, sondern jeweils eine 
+gezielte Messung der RTT bedeutet. Mit jeder Messung wird eine neue minimale RTT bestimmt, und die Warteschlange von Paketen
+kann am Engpass geleert werden.
+
+\subsection*{NewReno (b)}
+
+Der in Abbildung 1(b) aufgezeichnete Verlauf von NewReno zeigt im \texttt{cwnd} ein Sägezahn-ähnliches Muster. Hierbei lässt sich erst
+die lineare Steigung und dann der abrupte Einbruch der Anzahl der gesendeten Paketen leicht erkennen.
+Das \texttt{cwnd} wächst in der \textit{congestion avoidance} Phase bis zum nächsten Einbruch.
+Nach dem Einbruch tritt der Algorithmus in eine \textit{Recovery} Phase ein, wobei der Graph erneut linear zunimmt.
+
+\subsubsection*{Cubic (c)}
+
+Mit dem in Abbildung 1(c) visualisierten Graphen kann der Leser das Arbeitsmuster von Cubic erkennen.
+Ähnlich wie NewReno in Abbildung 1(b) reagiert Cubic auf Paketverluste, hat allerdings eine strengere Anstiegskurve,
+da hier der Graph kubisch verläuft. Ebenfalls zu erkennen sind Plateaus, in denen für eine kurze Zeit das 
+\texttt{cwnd} nicht ansteigt. Diese liegen an Orten, wo zuvor das $W_{max}$ erreicht wurde.
+
+\subsection*{Vegas (d)}
+
+In Abbildung 1 (d) wächst das \texttt{cwnd} ohne große Einbrüche. Dieser Verlauf passt zu Vegas, da der Algorithmus 
+das \texttt{cwnd} nur langsam erhöht wenn ein Engpass erkannt wird. Somit wird die Warteschlange an Paketen klein gehalten.
 
 
 \section{Ergebnisse und Diskussion}
@@ -408,13 +451,12 @@ P(A_k | B) = \frac{P(A_k)  \cdot P(B | A_k)}{\sum_{i=1}^{n}P(A_i  \cdot P(B | A_
 
 \subsection{Beweis der Formel von Bayes}
 
-Der Satz liefert : \newline
-
-\[
-P(A_k | B) = \frac{P(A_k \cap B)}{P(B) = \frac{P(A_k-)} \cdot \frac{P(B \cap A_k)}{(A_k)}{P(B)}}
+Der Satz liefert : 
+\[ 
+P(A_k | B) = \frac{P(A_k \cap B)}{P(B)} = \frac{P(A_k) \cdot \frac{P(B \cap A_k)}{P(A_k)}} {P(B)} = \frac{P(A_k) \cdot P(B | A_k)}{ \sum_{i=1}^{n}P(A_i) \cdot P(B | A_i)}
 \]
 
-
+$\square$
 
 
 

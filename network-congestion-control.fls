@@ -222,6 +222,12 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/generic/stringenc/stringenc.sty
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdfescape/pdfescape.sty
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdfescape/pdfescape.sty
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cite/cite.sty
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cite/cite.sty
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/subcaption.sty
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/subcaption.sty
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption.sty
@@ -286,13 +292,27 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/font
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmex10.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 OUTPUT network-congestion-control.toc
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsx1440.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbi1200.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ectt1200.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0600.tfm
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1200.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ectt0800.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ectt0800.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1095.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ectt1095.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1095.tfm
@@ -322,6 +342,12 @@ INPUT ./graphics/vegasCW.pdf
 INPUT ./graphics/vegasCW.pdf
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecss1095.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsx1095.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmex10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT ./network-congestion-control.bbl
 INPUT ./network-congestion-control.bbl
 INPUT network-congestion-control.bbl
@@ -333,10 +359,6 @@ INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
 INPUT ./graphics/3way.png
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr10.tfm
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi10.tfm
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmex10.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1095.tfm
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbi1095.tfm
 INPUT network-congestion-control.aux
@@ -353,8 +375,8 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/p
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1095.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1095.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1095.pk
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk
-INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt0800.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt0800.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1200.pk
@@ -363,6 +385,8 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/p
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1440.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1440.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
@@ -397,3 +421,5 @@ INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/font
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT /Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb

@@ -46,7 +46,7 @@ K.~W. James~F.Kurose, \emph{Computer Networking: A Top-Down Approach},
 
 \bibitem{cardwell2016bbr}
 \BIBentryALTinterwordspacing
-N.~Cardwell, Y.~Cheng, C.~S. Gunn, S.~Hassas~Yeganeh, and V.~Jacobson, ``Bbr:
+N.~Cardwell, Y.~Cheng, C.~S. Gunn, S.~H. Yeganeh, and V.~Jacobson, ``Bbr:
   Congestion-based congestion control: Measuring bottleneck bandwidth and
   round-trip propagation time,'' \emph{Queue}, vol.~14, no.~5, 2016. [Online].
   Available: \url{https://queue.acm.org/detail.cfm?id=3022184}
@@ -79,6 +79,13 @@ T.~Henderson and S.~Floyd, ``{The NewReno Modification to TCP's Fast Recovery
 S.~Ha, I.~Rhee, and L.~Xu, ``Cubic: a new tcp-friendly high-speed tcp
   variant,'' \emph{SIGOPS Oper. Syst. Rev.}, vol.~42, no.~5, p. 64–74, Jul.
   2008. [Online]. Available: \url{https://doi.org/10.1145/1400097.1400105}
+\BIBentrySTDinterwordspacing
+
+\bibitem{tcpccCh5}
+\BIBentryALTinterwordspacing
+L.~Peterson, L.~Brakmo, and B.~Davie, \emph{TCP Congestion Control: A Systems
+  Approach}.\hskip 1em plus 0.5em minus 0.4em\relax Systems Approach LLC, 2022.
+  [Online]. Available: \url{https://tcpcc.systemsapproach.org/index.html}
 \BIBentrySTDinterwordspacing
 
 \bibitem{ns3BBR}
