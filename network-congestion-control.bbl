@@ -103,4 +103,11 @@ P.~F. team, ``Why does cubic take us back to tcp congestion control?'' Online,
   \url{https://pandorafms.com/blog/tcp-congestion-control/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{larabelBBR}
+\BIBentryALTinterwordspacing
+M.~Larabel, ``Google's bbrv3 tcp congestion control showing great results, will
+  be upstreamed to linux,'' Online, 2023. [Online]. Available:
+  \url{https://www.phoronix.com/news/Google-BBRv3-Linux}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

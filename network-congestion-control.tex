@@ -8,19 +8,19 @@
 \usepackage[a4paper,left=25mm,right=35mm,top=25mm,bottom=30mm]{geometry}
 \usepackage{parskip}
 
-\usepackage{tcolorbox}
-\tcbuselibrary{listingsutf8}
-\usepackage{listings}
-
+% mathematische symbole
 \usepackage{amssymb}
 \usepackage{cite}
 
+% für code blocks
 \usepackage{verbatim} 
+
+% sub caption in der sub figure, Abbildung 2
 \usepackage{subcaption}  
-\DeclareCaptionType{listing}[Listing][List of Listings]
+
 \usepackage{float}
 
-% für die komplexe table im Amhamng 
+% für die komplexe table im Anhang 
 % https://mylatexnotes.wordpress.com/2017/07/31/text-x-mark-to-match-checkmark/
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
@@ -50,13 +50,13 @@
 Dieser Bericht zielt darauf ab, aktuell benutzte Algorithmen der Netzwerkstaukontrolle in Computernetzwerken 
 zu vergleichen.
 
-Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP BBR,
-TCP NewReno, TCP Cubic, und TCP Vegas.  \newline
+Die Algorithmen der Staukontrolle, welche in diesen Vergleich einfließen sind : TCP \textbf{BBR},
+TCP \textbf{NewReno}, TCP \textbf{Cubic}, und TCP \textbf{Vegas}.  \\
+Mittels des Open-Source Netzwerksimulators \textbf{ns-3}\cite{ns3-simu} wird ein virtuelles Netzwerk mit einem 10Mbit/s Engpass zwischen zwei Endpunkten aufgestellt. 
 
-Mittels des Open-Source Netzwerksimulators \textit{NS-3}\cite{ns3-simu} wird ein virtuelles Netzwerk mit einer 10Mbit/s Engstelle zwischen zwei Endpunkten aufgestellt. 
 In diesem Netzwerk wird zunächst ein künstlicher Datenverkehr erzeugt.
-Der genannte Datenverkehr wird anschließend aufgezeichnet und das dabei entstehende \textit{Congestion Window}(CW) dient als Basis für den Vergleich.
-Die unterschiedlichen CW's werden schließlich analysiert und in Bezug auf das gegebene Szenario evaluiert.
+Der genannte Datenverkehr wird anschließend aufgezeichnet und das dabei entstehende \textit{Congestion Window}(\texttt{cwnd}, vgl. \ref{cw-def}) dient als Basis für den Vergleich.
+Die unterschiedlichen \texttt{cwnd}'s werden schließlich analysiert und in Bezug auf das gegebene Szenario evaluiert.
 Dieser Bericht bietet dem Leser einen Überblick über einige CC-Algorithmen und ein grundlegendes Verständnis darüber, wie Computernetzwerke auf Datenstau und 
 Paketverlust reagieren.
 
@@ -80,7 +80,7 @@ und einen Ausschluss von der Erbringung weiterer Prüfungsleistungen zur Folge
 haben kann.
 \bigskip
  
-Saarbrücken, den \today
+Saarbrücken, den 30. August 2025
 
 \smallskip
 Unterschrift  Micha\l{} Roziel
@@ -108,7 +108,7 @@ Aufgrund diesem Vorkommen werden Algorithmen innerhalb von Netzwerkprotokollen v
 und helfen den Fluss von Datenpaketen zu steuern. Neben dem effizienten Durchfluss von Informationen ist zeitgleich auch die Fairness, 
 was die Verteilung von Ressourcen einer Netzwerkschnittstelle an ihre Hosts angeht, wichtig. Auch dies wird von CC-Algorithmen gewährleistet.
 In dem heutigen Stand von Rechnernetzen werden verschiedene Protokolle zur Netzwerkstaukontrolle verwendet, 
-Ich werde mich im Rahmen dieses Berichts allerdings auf das Transmission Control Protocoll beschränken, da dies das am meisten verbreitete ist.  \newline
+Ich werde mich im Rahmen dieses Berichts allerdings auf das Transmission Control Protocol beschränken, da dies das am meisten verbreitete ist.  \newline
 \newline
 Mit stets weiterentwickelten Rechnernetzen, und einem jährlich zunehmenden Datenverkehr, wie auch in der Deutschen Internetschnittstelle
 \textit{DE-CIX}\cite{DE-CIX2025} in Frankfurt gewinnen diese Algorithmen an Bedeutung. 
@@ -119,16 +119,16 @@ Mit stets weiterentwickelten Rechnernetzen, und einem jährlich zunehmenden Date
 
 
 \subsection{Grundlagen und Begriffe}
-Um die Funktionsweise und den Unterschied zwischen den hier behandelten CC-Algorithmen verstehen zu können, muss der Leser erst ein Grundverständnis über die Kommunukation innerhalb von Computernetzwerken haben.
+Um die Funktionsweise und den Unterschied zwischen den hier behandelten CC-Algorithmen verstehen zu können, muss der Leser erst ein Grundverständnis über die Kommunikation innerhalb von Computernetzwerken haben.
 Grundsätzlich wird heutzutage eins von zwei am verbreitesten Protokollen verwendet, entweder 
 TCP oder UDP. 
 
-\subsubsection{Transmission Control Protocoll}
+\subsubsection{Transmission Control Protocol}
 
-Das Transmission Control Protocoll (\textbf{TCP}) ist ein weit verbreitetes Netzwerkprotokoll. 
-TCP lässt sich in zu der Schicht 4 (Transportschicht) in dem OSI-Modell einordnen, hierbei liegt es zwichen der Vermittlungs- und Kommunikationsschicht.
-\newline TCP wurde 1981 unter RFC 793 erstmals standarisiert. \cite{rfc793}  \newline
-Die Aufgabes des TCP Protokolls ist es, zwischen zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
+Das Transmission Control Protocol (\textbf{TCP}) ist ein weit verbreitetes Netzwerkprotokoll. 
+TCP lässt sich in zu der Schicht 4 (Transportschicht) in dem OSI-Modell einordnen, hierbei liegt es zwischen der Vermittlungs- und Kommunikationsschicht.
+\newline TCP wurde 1981 unter RFC 793 erstmals standardisiert. \cite{rfc793}  \newline
+Die Aufgabe des TCP Protokolls ist es, zwischen zwei Hosts eine Verbindung aufzubauen, welche anschließend dazu genutzt wird,  
 Nachrichten in zu verschicken und zu empfangen.
 
 % QUOTE
@@ -142,7 +142,7 @@ Dies Bedeutet, dass TCP ebenfalls eine gewisses Abstraktionsniveau
 des Nachrichtenaustausches abnimmt. 
 
 
-Ein klares Unterscheidungsmerkmal des TCP von dem ebenfalls bekannten User Datagramm Protocoll (UDP) ist, dass TCP verbindungsorientiert arbeitet, 
+Ein klares Unterscheidungsmerkmal des TCP von dem ebenfalls bekannten User Datagramm Protocol (UDP) ist, dass TCP verbindungsorientiert arbeitet, 
 während UDP als verbindungslos gilt. Zudem werden bei TCP Daten in Form von Packets verschickt, während man bei UDP von Datagrammen spricht. \newline
 Bei TCP wird zu Beginn ein \textit{Three-Way Handshake}
 wie folgt durchgeführt : 
@@ -150,7 +150,7 @@ wie folgt durchgeführt :
 Der Sender schickt zunächst eine Nachricht mit einem Verbindungswunsch an den Empfänger und setzt das Flag 
 \textit{Synchronize, \textbf{SYN}}.
 \newline
-Der Empfänger antwortet mit einer Bestätigung die erste Nachrichte erhalten zu haben, und schickt ebenfalls einen 
+Der Empfänger antwortet mit einer Bestätigung die erste Nachricht erhalten zu haben, und schickt ebenfalls einen 
 Verbindungswunsch. Es werden die Flags \textit{\textbf{SYN-ACK}} (Synchronise-Acknowledge) gesetzt.
 
 
@@ -237,10 +237,10 @@ K = \sqrt[3]{\frac{W_{\text{max}} \cdot \beta}{C}}
 \subsubsection{TCP Vegas}
 \textbf{Vegas} ist ein Avoidance-basierter CC-Algorithmus, welcher 1994 vorgestellt wurde.
 Im Kapitel 5. von dem Buch \textit{TCP Congestion Control : A Systems Approach} wird beschrieben, dass Vegas den gemessenen Durchsatz 
-von Paketen mit dem erwarteten Wert vegleicht. \cite{tcpccCh5}
+von Paketen mit dem erwarteten Wert vergleicht. \cite{tcpccCh5}
 Auf Basis dieses Vergleiches wird dann bestimmt, wie viele Pakete ohne Verluste verschickt werden können.
 
-Der erwartete Wert ist hier der Idealwert von dem Durchsatz, welcher über das Netzwerk geesendet werden könnte, 
+Der erwartete Wert ist hier der Idealwert von dem Durchsatz, welcher über das Netzwerk gesendet werden könnte, 
 falls keine Warteschlange vorliegen würde. Dieser kann wie folgt bestimmt werden : 
 $ ExpectedRate = \frac{\text{\texttt{cwnd}}}{BaseRTT}$ \cite{tcpccCh5}
 wobei $BaseRTT$ die minimale RTT (vgl. \ref{rtt-def}) beschreibt.
@@ -254,8 +254,8 @@ wobei $BaseRTT$ die minimale RTT (vgl. \ref{rtt-def}) beschreibt.
     \label{fig:vegasCWandThroughput}
 \end{figure}
 
-Abbildung \ref{fig:vegasCWandThroughput} visualisiert das \texttt{cwnd} (vgl. \ref{cw-def}) und die 
-dazugehörigen Durchsätze (erwartet \& tatsächlich) für ein Beispiel Vegas Durchlauf.
+Abbildung \ref{fig:vegasCWandThroughput} visualisiert das \texttt{cwnd} (oberer Graph, vgl. \ref{cw-def}) und die 
+dazugehörigen Durchsätze (unterer Graph, erwartet \& tatsächlich) für ein Beispiel Vegas Durchlauf.
 Die in blau eingezeichnete Linie beschreibt den erwarteten Durchsatz, während die schwarz
 gefärbte Linie den tatsächlichen Durchsatz darstellt.
  
@@ -266,26 +266,40 @@ Hier werden dem Leser unterschiedliche Merkmale von \textbf{CC} Algorithmen vers
 Tabelle aufgelistet.
 
 \begin{table}[ht]
-\centering
+    \centering
 
-\begin{tabular}{r|l|l|l}
-   & \textbf{Algorithmus} & \textbf{Typ} & \textbf{Signal der Congestion avoidance} \\ \hline
-\textbf{BBR} & a & b & c \\
-\textbf{NewReno} & d & e & f \\
-\textbf{Cubic} & g & h & i \\
-\textbf{Vegas} & n & f & f 
+        \begin{tabular}{l|l|l}
 
-\end{tabular}
+            % Kopfzeile 
+            \hline
+            \textbf{Algorithmus} & \textbf{Typ} & \textbf{Signal der Congestion avoidance} \\ \hline
+
+            % content der tabelle 
+            \textbf{BBR} & Modell-basiert & Anstieg der \textbf{RTT}  \\
+            \hline
+            \textbf{NewReno} & Verlust-basiert & Paketverlust \\
+            \hline
+            \textbf{Cubic} & Verlust-basiert  & Paketverlust \\
+            \hline
+            \textbf{Vegas} & Avoidance-basiert & \textbf{Abweichung BaseRTT} vs \textbf{ActualRTT} \\
+            \hline
+
+        \end{tabular}
+
+        \caption{Merkmale der behandelten Algorithmen.}
+        \label{tab:algoComp}
+
+
 \end{table}
 
 \subsection{Definitionen}
 Hier werden dem Leser einige Definitionen über die in dem Bericht vorkommenden Begriffe näher gebracht.
 
-\subsubsection{Congestion Window} \label{cw-def}
-Das \textit{Congestion Window}(\texttt{cwnd}) beschreibt die maximale Anzahl von Segmenten (Paketen) welche gleichzeitig über ein Netzwerk gesendet werden können, ohne 
+\subsubsection{Congestion Window (\texttt{cwnd})} \label{cw-def}
+Das \textit{Congestion Window}(\texttt{cwnd}) beschreibt die maximale Anzahl von Segmenten (Paketen), welche gleichzeitig über ein Netzwerk gesendet werden können, ohne 
 dass Datenstau auftritt. Falls es zu Engpässen kommt, fällt der Verlauf von \texttt{cwnd}.
 
-\subsubsection{Round-Trip Time} \label{rtt-def}
+\subsubsection{Round-Trip Time (\textbf{RTT})} \label{rtt-def}
 
 Der Round-Trip Time (\textbf{RTT})ist die Zeit von dem Absenden eines Segments bis zu dem Eintreffen der jeweiligen Bestätigungsnachricht \textit{\textbf{ACK}} beim Sender.
 
@@ -294,7 +308,7 @@ Der Round-Trip Time (\textbf{RTT})ist die Zeit von dem Absenden eines Segments b
 \clearpage
 \section{Versuchsaufbau}
 
-Mit einem Test innerhalb des Command Line Simulators \textit{NS-3.45}\cite{ns3-simu} lässt sich ein beliebieger CC-Algorithmus ausführen.
+Mit einem Test innerhalb des Command Line Simulators \textbf{ns-3}\cite{ns3-simu} lässt sich ein beliebieger CC-Algorithmus ausführen.
 
 
 \textbf{Netzwerktopologie}
@@ -361,14 +375,14 @@ lässt sich der jeweilige Testlauf ausführen.
 \clearpage 
 \subsection{Analyse der Ergebnisse}
 Wie an den \textit{Congestion Window} Graphen erkennbar, besitzt jeder 
-der vorgestellten Algorithmen eine eigene Herangehensweise was  das Regulieren 
+der vorgestellten Algorithmen eine eigene Herangehensweise, was das Regulieren 
 von Datenstau angeht.
-Die RTT wird bei ungefähr $40$ Milisekunden liegen, da die Verzögerung aufgrund
+Die RTT wird bei ungefähr $40$ Millisekunden liegen, da die Verzögerung aufgrund
 der Netzwerktopologie bei \texttt{5ms + 10ms + 5ms} in jede Richtung liegt. 
 
 \subsection*{BBR (a)}
 
-Das im Graph in Abbildung 1(a) gezeigte \texttt{cwnd} weist auf klare, periodische Einbrüche des Verlaufs auf, diese lassen
+Das im Graph in Abbildung 2(a) gezeigte \texttt{cwnd} weist auf klare periodische Einbrüche des Verlaufs auf, diese lassen
 sich auf die Phase \textit{ProbeRTT} des Algorithmus zurückführen. Dies unterscheidet BBR von den anderen
 CC-Algorithmen, da hier ein Einbruch im \texttt{cwnd} nicht direkt ein Hinweis auf Paketverlust ist, sondern jeweils eine 
 gezielte Messung der RTT bedeutet. Mit jeder Messung wird eine neue minimale RTT bestimmt, und die Warteschlange von Paketen
@@ -376,23 +390,23 @@ kann am Engpass geleert werden.
 
 \subsection*{NewReno (b)}
 
-Der in Abbildung 1(b) aufgezeichnete Verlauf von NewReno zeigt im \texttt{cwnd} ein Sägezahn-ähnliches Muster. Hierbei lässt sich erst
+Der in Abbildung 2(b) aufgezeichnete Verlauf von NewReno zeigt im \texttt{cwnd} ein Sägezahn-ähnliches Muster. Hierbei lässt sich erst
 die lineare Steigung und dann der abrupte Einbruch der Anzahl der gesendeten Paketen leicht erkennen.
 Das \texttt{cwnd} wächst in der \textit{congestion avoidance} Phase bis zum nächsten Einbruch.
 Nach dem Einbruch tritt der Algorithmus in eine \textit{Recovery} Phase ein, wobei der Graph erneut linear zunimmt.
 
 \subsubsection*{Cubic (c)}
 
-Mit dem in Abbildung 1(c) visualisierten Graphen kann der Leser das Arbeitsmuster von Cubic erkennen.
+Mit dem in Abbildung 2(c) visualisierten Graphen kann der Leser das Arbeitsmuster von Cubic erkennen.
 Ähnlich wie NewReno in Abbildung 1(b) reagiert Cubic auf Paketverluste, hat allerdings eine strengere Anstiegskurve,
 da hier der Graph kubisch verläuft. Ebenfalls zu erkennen sind Plateaus, in denen für eine kurze Zeit das 
 \texttt{cwnd} nicht ansteigt. Diese liegen an Orten, wo zuvor das $W_{max}$ erreicht wurde.
 
 \subsection*{Vegas (d)}
 
-In Abbildung 1 (d) wächst das \texttt{cwnd} ohne große Einbrüche. Dieser Verlauf passt zu Vegas, da der Algorithmus 
+In Abbildung 2(d) wächst das \texttt{cwnd} ohne große Einbrüche. Dieser Verlauf passt zu Vegas, da der Algorithmus 
 das \texttt{cwnd} nur langsam erhöht wenn ein Engpass erkannt wird. Somit wird die Warteschlange an Paketen klein gehalten.
-Wie an dem Graphen erkennbar, fällt das \texttt{cwnd} Verhalten linear.
+Eine kleine Warteschlange bedeutet hier eine niedrige Latenz.
 
 
 \section{Ergebnisse und Diskussion}
@@ -400,34 +414,43 @@ Aufgrund der vorher durchgeführten Analyse werden hier die daraus gewonnenen \t
 
 \textbf{BBR} weist periodisch auftretende Einbrüche auf, welche sich allerdings auf \textit{ProbeRTT} zurückführen lassen.
 Grundsätzlich ist das Sendeverhalten von BBR stabil, und die auftretenden Warteschlangen werden regelmäßig abgebaut.
-Bei mehreren, nebenläufigen Übertragungen hat BBR Schwierigkeiten mit der Fairness, allerdings wurden diese in den späteren
-Versionen adressiert. Da wie beschreiben der Verlust von Paketen nicht das primäre Signal ist, eignet sich BBR für 
-Netzwerke in denen oft ein zufälliger Verlust auftritt, wie etwa bei WLAN. \newline
-\textbf{NewReno} welcher auch im Linux Kernel vertreten ist, hat eine lineare Steigung und abrupte Einbrüche.
+Bei mehreren nebenläufigen Übertragungen hat BBR Schwierigkeiten mit der Fairness, allerdings wurden diese in den späteren
+Versionen adressiert. Da wie beschrieben der Verlust von Paketen nicht das primäre Signal ist, eignet sich BBR für 
+Netzwerke, in denen oft ein zufälliger Verlust auftritt, wie etwa bei WLAN. \newline
+\textbf{NewReno} welcher auch im Linux-Kernel vertreten ist, hat eine lineare Steigung und abrupte Einbrüche.
 Da dieser Algorithmus stark auf den Verlust von Paketen reagiert, kann es bei Netzwerken mit zufälligen Signalschwankungen
 zu Unterauslastung kommen, hierbei wird aufgrund von ständig aufeinanderfolgenden \textit{congestion avoidance} Phasen
 nicht die volle Bandbreite des Netzwerks ausgenutzt. \newline
 \textbf{Cubic} kann durch die kubische Wachstumskurve effizient nach Einbrüchen des \texttt{cwnd} wieder die gewünschte 
-Kapazität an Paketen wiederfinden. Heutzutage wurd Cubic in Linux, aber auch in Netzwerken mit hohen Bandbreiten verwendet.\cite{pandorafms} \newline
-\textbf{Vegas} besitzt duch die langsame Steigung des \texttt{cwnd} eine niedrige Latenz.
-Hierbei wird nicht direkt auf Verlust geachtet, sondern wie beschrieben die RTT gemessen, verglichen, und anschließend entschieden.
+Kapazität an Paketen wiederfinden. Heutzutage wird Cubic in Linux, aber auch in Netzwerken mit hohen Bandbreiten verwendet.\cite{pandorafms} \newline
+\textbf{Vegas} besitzt durch die langsame Steigung des \texttt{cwnd} eine niedrige Latenz.
+Hierbei wird nicht direkt auf Verlust geachtet, sondern wie beschrieben die RTT gemessen, verglichen und anschließend entschieden.
 
 
 
 \section{Fazit und Schlussfolgerungen}
 Ziel dieses Berichts war es die Staukontrollverfahren unter identischen Bedingungen zu vergleichen.
-Dies ist mit \textbf{ns-3} gelungen, und die Algorithmen konnten in Form vom \texttt{cwnd} Graphen aufgezeichnet
+Dies ist mit \textbf{ns-3} gelungen, und die Algorithmen konnten in Form von \texttt{cwnd} Graphen aufgezeichnet
 werden.
 Auch wenn diese Verfahren das gleiche Ziel befolgen, nämlich den Datenfluss von Paketen über das Netzwerk zu 
-verwalten, tun Sie dies mit verschiedenen Vorgehensweisen. Es soll eine möglichst hohe Bandbreite gewährleistet
+verwalten, tun sie dies mit verschiedenen Vorgehensweisen. Es soll eine möglichst hohe Bandbreite gewährleistet
 werden, und gleichzeitig kein Verlust von Paketen an Netzwerkschnittstellen erfolgen. Es ist klar, dass CC-Algorithmen
-ein nötiges Bestandteil der heutigen Rechnernetze ist, und bleibt.
+ein nötiges Bestandteil der heutigen Rechnernetze sind, und bleiben.
 
 
 \section{Ausblick}
-Um den Rahmen dieses Berichts einfach zu halten, habe Ich mich entschieden, nur das \texttt{cwnd} in den Vergleich 
-einzubringen. Interessant wäre zusätzlich die Messung der Bandbreite, oder etwa im Fall von \textbf{BBR} mehrere Datenflüsse(\textit{Flows}) 
-eizuführen, und diese mit \textbf{ns-3} und dem \textbf{JFI} auszuwerten. 
+Um den Rahmen dieses Berichts einfach zu halten, habe ich mich entschieden, nur das \texttt{cwnd} in den Vergleich 
+einzubringen. Interessant wäre zusätzlich die Messung der Bandbreite oder etwa im Fall von \textbf{BBR} mehrere Datenflüsse(\textit{Flows}) 
+eizuführen und diese mit \textbf{ns-3} und dem \textbf{JFI} auszuwerten. \\
+Michael Larabel beschreibt, dass die Firma Google mit \textbf{BBRv3} eine 12\% Abnahme von Neuübertragungen, was Pakete angeht,
+im Vergleich zu \textbf{BBRv1} erzielen konnte.\cite{larabelBBR}
+
+\begin{quote}
+    ``Google engineers plan to propose mainlining BBRv3 into the Linux kernel TCP/networking code in August. 
+    The plan is to upgrade the BBR module to the v3 code from v1.'' \cite{larabelBBR}
+\end{quote}
+
+Die CC-Algorithmen werden somit immer weiterentwickelt um den Anforderungen in der heutigen Welt zu genügen.
 
 
 
@@ -516,9 +539,9 @@ $\square$
         \midrule
             
             Java & JVM & \xmark & \xmark & \cmark   \\
-            OCamkl & Nachfolger von StandardML & \cmark & \xmark & \xmark \\
-            Lisp & Common Lisp & \cmark & \xmark & \xmark \\
-            Pascal & ISO Pascal & \xmark & \cmark & \xmark \\ 
+            Ocaml & schneller, nativer Compiler & \cmark & \xmark & \xmark \\
+            Lisp & dynamisch & \cmark & \xmark & \xmark \\
+            Pascal & stark typisiert & \xmark & \cmark & \xmark \\ 
             C & Low-Level & \xmark & \cmark & \xmark \\
 
         \bottomrule
@@ -534,6 +557,11 @@ $\square$
     
 \end{table}
 
+
+\section{Hilfsmittel \& Verwendung von KI}
+Für die Identifikation und Korrektur der Rechtschreibfehler wurde der "Duden Mentor" Schreibassistent 
+verwendet. Hierbei wurde ausschließlich die Version "Mentor Klassik" verwendet, und auf die KI gestützte Variante
+verzichtet. 
 
 \end{document}
 

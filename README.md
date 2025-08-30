@@ -3,15 +3,9 @@
 
 ## Congestion Control Algorithms
 
-### 1. TCP Reno
-- loss based 
-
 
 ### TCP BBR 
-- model based
-
+### TCP NewReno
+### TCP Cubic
 ### TCP Vegas
-- delay based
 
-### TCP ECN
-- explicit Congestion Notification
