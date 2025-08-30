@@ -82,7 +82,12 @@ haben kann.
  
 Saarbrücken, den 30. August 2025
 
-\smallskip
+\bigskip
+\bigskip
+\bigskip
+
+
+
 Unterschrift  Micha\l{} Roziel
 
 
@@ -144,16 +149,14 @@ des Nachrichtenaustausches abnimmt.
 
 Ein klares Unterscheidungsmerkmal des TCP von dem ebenfalls bekannten User Datagramm Protocol (UDP) ist, dass TCP verbindungsorientiert arbeitet, 
 während UDP als verbindungslos gilt. Zudem werden bei TCP Daten in Form von Packets verschickt, während man bei UDP von Datagrammen spricht. \newline
-Bei TCP wird zu Beginn ein \textit{Three-Way Handshake}
-wie folgt durchgeführt : 
 
+Bei TCP wird zu Beginn ein \textit{Three-Way Handshake}
+wie folgt durchgeführt : \\
 Der Sender schickt zunächst eine Nachricht mit einem Verbindungswunsch an den Empfänger und setzt das Flag 
 \textit{Synchronize, \textbf{SYN}}.
 \newline
 Der Empfänger antwortet mit einer Bestätigung die erste Nachricht erhalten zu haben, und schickt ebenfalls einen 
-Verbindungswunsch. Es werden die Flags \textit{\textbf{SYN-ACK}} (Synchronise-Acknowledge) gesetzt.
-
-
+Verbindungswunsch. Es werden die Flags \textit{\textbf{SYN-ACK}} (Synchronise-Acknowledge) gesetzt.\\
 Als letztes schickt der Sender eine Bestätigung, dass die Nachricht des Empfängers angekommen ist, dies geschieht wieder
 mit dem Flag \textit{\textbf{ACK}}. Nun ist die Verbindung bereit, Daten in beide Richtungen zu übertragen.
 Nach jedem gesendeten Datenpaket folgt eine \textit{\textbf{ACK}} Bestätigung.
@@ -168,10 +171,7 @@ Nach jedem gesendeten Datenpaket folgt eine \textit{\textbf{ACK}} Bestätigung.
 Algorithmen der Staukontrolle kommen zum Einsatz, wenn in einem Netzwerk ein potentieller Datenstau erkannt wird.
 Grundsätzlich starten die Algorithmen in dem Arbeitsmodus \textit{slow start}.
 Falls Datenstau erkannt wird, treten diese Algorithmen in die Phase \textit{congestion avoidance}.
-
-
 Hiermit wird mit verschiedenen Vorgehensweisen gegen die Netzwerküberlastung gesteuert. 
-\newline
 Es existieren unterschiedliche Typen von CC-Algorithmen, die jeweils ihre eigenen Vor- und Nachteile haben.
 In diesem Bericht wird jeweils ein Algorithmus pro Typ behandelt.
 
@@ -196,7 +196,7 @@ unterteilt werden kann : \newline
 \end{enumerate}
 
 
-Während andere CC-Algorithmen wie etwa NewReno oder CUBIC auf Paketverlust reagieren, misst BBR die vorliegende Engpassbreite sowie RTT,
+Während andere CC-Algorithmen wie etwa NewReno oder CUBIC auf Paketverlust reagieren, misst BBR die vorliegende Engpassbreite sowie RTT (vgl. \ref{rtt-def}),
 und bestimmt daraus die Sende-Rate, welche anschließend in dem Netzwerk eingesetzt wird. 
 Da BBR nicht direkt auf Paketverlust reagiert, kommt es mit gut mit zufälligen Paketverlust zurecht, hat aber zeitgleich
 Schwierigkeiten mit der Fairness was die Verteilung von Ressourcen angeht : 
@@ -219,14 +219,13 @@ Das Wachstum des \texttt{cwnd} (vgl.\ref{cw-def})  ist hierbei linear gegenüber
 
 
 \subsubsection{TCP Cubic}
-\textbf{Cubic} ist ebenfalls ein \textit{Loss-Based} Algorithmus.
-
+\textbf{Cubic} ist ein \textit{Verlust-basierter} CC-Algorithmus, welcher erstmals 2006 in den Linux-Kernel integriert wurde.
+Der Verlauf des \texttt{cwnd} ist hierbei kubisch.
 Die Wachstumsfunktion, welche anschließend die neue Größe des \textit{Congestion Window}
 beschreibt, wird definiert als : $ W(t) = C(t-K)^3 + W_{max}$.  
 Hierbei ist \textit{W} die größe des Congestion Windows, \textit{C} eine Cubic-Konstante, 
 \textit{t} die Zeit seit dem letzten Paketverlust, und \textit{K} die Zeit, welche \textit{TCP Cubic} benötigt 
 um wieder \textit{W\text{max}} zu erreichen.
-
 Mit der Sensitivität auf Paketverlust $\beta$ kann \textit{K} wie folgt berechnet werden \cite{HArheeInjXuCUBIC} :
 
 \[
@@ -268,7 +267,7 @@ Tabelle aufgelistet.
 \begin{table}[ht]
     \centering
 
-        \begin{tabular}{l|l|l}
+        \begin{tabular}{c|c|c}
 
             % Kopfzeile 
             \hline
@@ -281,7 +280,7 @@ Tabelle aufgelistet.
             \hline
             \textbf{Cubic} & Verlust-basiert  & Paketverlust \\
             \hline
-            \textbf{Vegas} & Avoidance-basiert & \textbf{Abweichung BaseRTT} vs \textbf{ActualRTT} \\
+            \textbf{Vegas} & Avoidance-basiert & Abweichung \textbf{BaseRTT} vs \textbf{ActualRTT} \\
             \hline
 
         \end{tabular}
@@ -380,31 +379,31 @@ von Datenstau angeht.
 Die RTT wird bei ungefähr $40$ Millisekunden liegen, da die Verzögerung aufgrund
 der Netzwerktopologie bei \texttt{5ms + 10ms + 5ms} in jede Richtung liegt. 
 
-\subsection*{BBR (a)}
+\subsection*{BBR}
 
-Das im Graph in Abbildung 2(a) gezeigte \texttt{cwnd} weist auf klare periodische Einbrüche des Verlaufs auf, diese lassen
+Das im Graph in Abbildung \ref{fig:bbr} gezeigte \texttt{cwnd} weist auf klare periodische Einbrüche des Verlaufs auf, diese lassen
 sich auf die Phase \textit{ProbeRTT} des Algorithmus zurückführen. Dies unterscheidet BBR von den anderen
 CC-Algorithmen, da hier ein Einbruch im \texttt{cwnd} nicht direkt ein Hinweis auf Paketverlust ist, sondern jeweils eine 
 gezielte Messung der RTT bedeutet. Mit jeder Messung wird eine neue minimale RTT bestimmt, und die Warteschlange von Paketen
 kann am Engpass geleert werden.
 
-\subsection*{NewReno (b)}
+\subsection*{NewReno}
 
-Der in Abbildung 2(b) aufgezeichnete Verlauf von NewReno zeigt im \texttt{cwnd} ein Sägezahn-ähnliches Muster. Hierbei lässt sich erst
+Der in Abbildung \ref{fig:newreno} aufgezeichnete Verlauf von NewReno zeigt im \texttt{cwnd} ein Sägezahn-ähnliches Muster. Hierbei lässt sich erst
 die lineare Steigung und dann der abrupte Einbruch der Anzahl der gesendeten Paketen leicht erkennen.
 Das \texttt{cwnd} wächst in der \textit{congestion avoidance} Phase bis zum nächsten Einbruch.
 Nach dem Einbruch tritt der Algorithmus in eine \textit{Recovery} Phase ein, wobei der Graph erneut linear zunimmt.
 
-\subsubsection*{Cubic (c)}
+\subsection*{Cubic}
 
-Mit dem in Abbildung 2(c) visualisierten Graphen kann der Leser das Arbeitsmuster von Cubic erkennen.
+Mit dem in Abbildung \ref{fig:cubic} visualisierten Graphen kann der Leser das Arbeitsmuster von Cubic erkennen.
 Ähnlich wie NewReno in Abbildung 1(b) reagiert Cubic auf Paketverluste, hat allerdings eine strengere Anstiegskurve,
 da hier der Graph kubisch verläuft. Ebenfalls zu erkennen sind Plateaus, in denen für eine kurze Zeit das 
 \texttt{cwnd} nicht ansteigt. Diese liegen an Orten, wo zuvor das $W_{max}$ erreicht wurde.
 
-\subsection*{Vegas (d)}
+\subsection*{Vegas}
 
-In Abbildung 2(d) wächst das \texttt{cwnd} ohne große Einbrüche. Dieser Verlauf passt zu Vegas, da der Algorithmus 
+In Abbildung \ref{fig:vegas} wächst das \texttt{cwnd} ohne große Einbrüche. Dieser Verlauf passt zu Vegas, da der Algorithmus 
 das \texttt{cwnd} nur langsam erhöht wenn ein Engpass erkannt wird. Somit wird die Warteschlange an Paketen klein gehalten.
 Eine kleine Warteschlange bedeutet hier eine niedrige Latenz.
 
@@ -416,13 +415,13 @@ Aufgrund der vorher durchgeführten Analyse werden hier die daraus gewonnenen \t
 Grundsätzlich ist das Sendeverhalten von BBR stabil, und die auftretenden Warteschlangen werden regelmäßig abgebaut.
 Bei mehreren nebenläufigen Übertragungen hat BBR Schwierigkeiten mit der Fairness, allerdings wurden diese in den späteren
 Versionen adressiert. Da wie beschrieben der Verlust von Paketen nicht das primäre Signal ist, eignet sich BBR für 
-Netzwerke, in denen oft ein zufälliger Verlust auftritt, wie etwa bei WLAN. \newline
+Netzwerke, in denen oft ein zufälliger Verlust auftritt, wie etwa bei WLAN. \newline \newline
 \textbf{NewReno} welcher auch im Linux-Kernel vertreten ist, hat eine lineare Steigung und abrupte Einbrüche.
 Da dieser Algorithmus stark auf den Verlust von Paketen reagiert, kann es bei Netzwerken mit zufälligen Signalschwankungen
 zu Unterauslastung kommen, hierbei wird aufgrund von ständig aufeinanderfolgenden \textit{congestion avoidance} Phasen
-nicht die volle Bandbreite des Netzwerks ausgenutzt. \newline
+nicht die volle Bandbreite des Netzwerks ausgenutzt. \newline \newline
 \textbf{Cubic} kann durch die kubische Wachstumskurve effizient nach Einbrüchen des \texttt{cwnd} wieder die gewünschte 
-Kapazität an Paketen wiederfinden. Heutzutage wird Cubic in Linux, aber auch in Netzwerken mit hohen Bandbreiten verwendet.\cite{pandorafms} \newline
+Kapazität an Paketen wiederfinden. Heutzutage wird Cubic in Linux, aber auch in Netzwerken mit hohen Bandbreiten verwendet.\cite{pandorafms} \newline \newline
 \textbf{Vegas} besitzt durch die langsame Steigung des \texttt{cwnd} eine niedrige Latenz.
 Hierbei wird nicht direkt auf Verlust geachtet, sondern wie beschrieben die RTT gemessen, verglichen und anschließend entschieden.
 
@@ -441,7 +440,7 @@ ein nötiges Bestandteil der heutigen Rechnernetze sind, und bleiben.
 \section{Ausblick}
 Um den Rahmen dieses Berichts einfach zu halten, habe ich mich entschieden, nur das \texttt{cwnd} in den Vergleich 
 einzubringen. Interessant wäre zusätzlich die Messung der Bandbreite oder etwa im Fall von \textbf{BBR} mehrere Datenflüsse(\textit{Flows}) 
-eizuführen und diese mit \textbf{ns-3} und dem \textbf{JFI} auszuwerten. \\
+eizuführen und diese mit \textbf{ns-3} und dem \textbf{JFI} auszuwerten. 
 Michael Larabel beschreibt, dass die Firma Google mit \textbf{BBRv3} eine 12\% Abnahme von Neuübertragungen, was Pakete angeht,
 im Vergleich zu \textbf{BBRv1} erzielen konnte.\cite{larabelBBR}
 
@@ -559,7 +558,7 @@ $\square$
 
 
 \section{Hilfsmittel \& Verwendung von KI}
-Für die Identifikation und Korrektur der Rechtschreibfehler wurde der "Duden Mentor" Schreibassistent 
+Für die Identifikation und Korrektur der Rechtschreibfehler wurde der \textit{Duden Mentor} Schreibassistent 
 verwendet. Hierbei wurde ausschließlich die Version "Mentor Klassik" verwendet, und auf die KI gestützte Variante
 verzichtet. 
 

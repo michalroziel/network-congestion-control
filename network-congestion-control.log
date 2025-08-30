@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.12.11)  30 AUG 2025 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.12.11)  30 AUG 2025 20:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -530,7 +530,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 103--115
+Underfull \hbox (badness 10000) in paragraph at lines 108--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
 
  []
 
@@ -549,35 +554,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--190
 <./graphics/vegas.png, id=39, 606.265pt x 315.1775pt>
 File: ./graphics/vegas.png Graphic file (type png)
 <use ./graphics/vegas.png>
-Package pdftex.def Info: ./graphics/vegas.png  used on input line 251.
+Package pdftex.def Info: ./graphics/vegas.png  used on input line 250.
 (pdftex.def)             Requested size: 273.6493pt x 142.26378pt.
 
 
 [3]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 298.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 297.
 
 
 [4 <./graphics/vegas.png>]
 <graphics/bbrCW.pdf, id=58, 284.06125pt x 198.7425pt>
 File: graphics/bbrCW.pdf Graphic file (type pdf)
 <use graphics/bbrCW.pdf>
-Package pdftex.def Info: graphics/bbrCW.pdf  used on input line 348.
+Package pdftex.def Info: graphics/bbrCW.pdf  used on input line 347.
 (pdftex.def)             Requested size: 170.71393pt x 119.44353pt.
 <graphics/newRenoCW.pdf, id=59, 284.06125pt x 198.7425pt>
 File: graphics/newRenoCW.pdf Graphic file (type pdf)
 <use graphics/newRenoCW.pdf>
-Package pdftex.def Info: graphics/newRenoCW.pdf  used on input line 354.
+Package pdftex.def Info: graphics/newRenoCW.pdf  used on input line 353.
 (pdftex.def)             Requested size: 170.71393pt x 119.44353pt.
 <graphics/cubicCW.pdf, id=60, 284.06125pt x 198.7425pt>
 File: graphics/cubicCW.pdf Graphic file (type pdf)
 <use graphics/cubicCW.pdf>
-Package pdftex.def Info: graphics/cubicCW.pdf  used on input line 360.
+Package pdftex.def Info: graphics/cubicCW.pdf  used on input line 359.
 (pdftex.def)             Requested size: 170.71393pt x 119.44353pt.
 <graphics/vegasCW.pdf, id=61, 284.06125pt x 198.7425pt>
 File: graphics/vegasCW.pdf Graphic file (type pdf)
 <use graphics/vegasCW.pdf>
-Package pdftex.def Info: graphics/vegasCW.pdf  used on input line 366.
+Package pdftex.def Info: graphics/vegasCW.pdf  used on input line 365.
 (pdftex.def)             Requested size: 170.71393pt x 119.44353pt.
 
 
@@ -593,6 +598,21 @@ pdfTeX warning: pdflatex (file ./graphics/cubicCW.pdf): PDF inclusion: multiple 
 
 pdfTeX warning: pdflatex (file ./graphics/vegasCW.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
+Underfull \hbox (badness 10000) in paragraph at lines 414--427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--427
+
+ []
+
+
 
 [6
 
@@ -606,14 +626,14 @@ pdfTeX warning: pdflatex (file ./graphics/vegasCW.pdf): PDF inclusion: multiple 
 <graphics/3way.png, id=189, 1005.7575pt x 948.54375pt>
 File: graphics/3way.png Graphic file (type png)
 <use graphics/3way.png>
-Package pdftex.def Info: graphics/3way.png  used on input line 477.
+Package pdftex.def Info: graphics/3way.png  used on input line 476.
 (pdftex.def)             Requested size: 301.68353pt x 284.52756pt.
 
 
 [9
 
  <./graphics/3way.png>]
-Overfull \hbox (25.88168pt too wide) in paragraph at lines 562--565
+Overfull \hbox (25.88168pt too wide) in paragraph at lines 561--564
 \T1/cmr/m/n/10.95 Schrei-bas-sis-tent ver-wen-det. Hier-bei wur-de aus-schlie^^ff-lich die Ver-si-on "Men-tor Klas-sik"verwendet,
  []
 
@@ -626,17 +646,17 @@ L3 programming layer <2024-11-02>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11957 strings out of 473682
- 229223 string characters out of 5707353
- 761614 words of memory out of 5000000
- 34837 multiletter control sequences out of 15000+600000
+ 11954 strings out of 473682
+ 229118 string characters out of 5707353
+ 762614 words of memory out of 5000000
+ 34834 multiletter control sequences out of 15000+600000
  581308 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,10n,107p,11028b,662s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx2488.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1095.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt0800.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1440.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1728.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk> </Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on network-congestion-control.pdf (14 pages, 1490789 bytes).
+Output written on network-congestion-control.pdf (14 pages, 1491316 bytes).
 PDF statistics:
- 941 PDF objects out of 1000 (max. 8388607)
+ 942 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

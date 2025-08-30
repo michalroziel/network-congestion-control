@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex network-congestion-control"] 1756561507.7035 "network-congestion-control.aux" "network-congestion-control.bbl" "network-congestion-control" 1756561786.67585 0
+["bibtex network-congestion-control"] 1756568486.89479 "network-congestion-control.aux" "network-congestion-control.bbl" "network-congestion-control" 1756578668.37128 0
   "./literatur.bib" 1756556219.87399 5454 9bbf86adbf6eb62b19c2f90f2aaad772 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/install/bibtex/bst/ieeetran/IEEEtran.bst" 1752181530.31306 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "network-congestion-control.aux" 1756561785.53191 6345 745a878e07c2b8e7271279d51ed755a9 "pdflatex"
-  "titleseite.aux" 1756561784.88693 595 df52f7a1c9d2fb2047877a6fd51420d0 "pdflatex"
+  "network-congestion-control.aux" 1756578667.35357 6345 ed762c5c843a975d55211d78bd41d663 "pdflatex"
+  "titleseite.aux" 1756578666.74952 595 df52f7a1c9d2fb2047877a6fd51420d0 "pdflatex"
   (generated)
   "network-congestion-control.bbl"
   "network-congestion-control.blg"
   (rewritten before read)
-["pdflatex"] 1756561783.7191 "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/network-congestion-control.tex" "network-congestion-control.pdf" "network-congestion-control" 1756561786.67608 0
-  "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/network-congestion-control.tex" 1756561782.86286 23708 cb342ef7ee1f900bfda2d581bf824121 ""
+["pdflatex"] 1756578665.63569 "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/network-congestion-control.tex" "network-congestion-control.pdf" "network-congestion-control" 1756578668.3715 0
+  "/Users/michalroziel/Documents/HTW SAAR/Semester 4/Wissenschaftliches Arbeiten/network-congestion-control/network-congestion-control.tex" 1756578665.00361 23905 f3c9007e5975fb6b9179b1375dd348a7 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1756494269.27079 159039 077e0723f647f59f7aa7a77f94c40d54 ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1095.pk" 1756393246.06754 38336 aa0e0e3573b8ddd3e8129334e070d88f ""
   "/Users/michalroziel/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1200.pk" 1750107916.62098 42728 253cfdb4cfd93395ec93707f6f50a9c5 ""
@@ -167,12 +167,12 @@
   "graphics/newRenoCW.pdf" 1752154561.68032 28639 c5678c9d119e755d487e14e2c20f5c82 ""
   "graphics/vegas.png" 1756478103.03276 166783 804f0c44972d5abcbf6c0fbece4320d5 ""
   "graphics/vegasCW.pdf" 1752154733.09727 17678 808eaa630b7c5da66a8113c3478ee8d7 ""
-  "network-congestion-control.aux" 1756561785.53191 6345 745a878e07c2b8e7271279d51ed755a9 "pdflatex"
-  "network-congestion-control.bbl" 1756561508.09828 4484 6cfc153a0fb999aa71f65bbefda7b5fa "bibtex network-congestion-control"
-  "network-congestion-control.tex" 1756561782.86286 23708 cb342ef7ee1f900bfda2d581bf824121 ""
-  "network-congestion-control.toc" 1756561785.53498 1974 b1f191196c2eb06a16c333efc5ce6b39 "pdflatex"
-  "titleseite.aux" 1756561784.88693 595 df52f7a1c9d2fb2047877a6fd51420d0 "pdflatex"
-  "titleseite.tex" 1756557667.89611 576 a47b73d92d9dfef10e076a7701401032 ""
+  "network-congestion-control.aux" 1756578667.35357 6345 ed762c5c843a975d55211d78bd41d663 "pdflatex"
+  "network-congestion-control.bbl" 1756568487.27012 4484 6cfc153a0fb999aa71f65bbefda7b5fa "bibtex network-congestion-control"
+  "network-congestion-control.tex" 1756578665.00361 23905 f3c9007e5975fb6b9179b1375dd348a7 ""
+  "network-congestion-control.toc" 1756578667.35622 1974 b1f191196c2eb06a16c333efc5ce6b39 "pdflatex"
+  "titleseite.aux" 1756578666.74952 595 df52f7a1c9d2fb2047877a6fd51420d0 "pdflatex"
+  "titleseite.tex" 1756567338.94047 576 a47b73d92d9dfef10e076a7701401032 ""
   (generated)
   "network-congestion-control.aux"
   "network-congestion-control.log"
